@@ -1,0 +1,25 @@
+
+<svg width="63px" height="66px" viewBox="0 0 63 66" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <filter x="-61.0%" y="-47.9%" width="222.0%" height="193.8%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="-3" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile-Portrait" transform="translate(-128.000000, -3791.000000)" fill="#F8B24F" stroke="#F8B24F" stroke-width="4">
+            <g id="Footer" transform="translate(-97.000000, 3429.000000)">
+                <g id="Group" filter="url(#filter-1)" transform="translate(236.000000, 374.000000)">
+                    <path d="M36.3409091,22 L20.5,5 L4.65909091,22 L0,22 L20.5,0 L41,22 L36.3409091,22 Z" id="Combined-Shape"></path>
+                    <path d="M36.3409091,35 L20.5,18 L4.65909091,35 L0,35 L20.5,13 L41,35 L36.3409091,35 Z" id="Combined-Shape-Copy"></path>
+                    <path d="M36.3409091,48 L20.5,31 L4.65909091,48 L0,48 L20.5,26 L41,48 L36.3409091,48 Z" id="Combined-Shape-Copy-3"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

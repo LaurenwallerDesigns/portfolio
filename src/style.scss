@@ -1,0 +1,58 @@
+@import 'colors', 'fonts';
+
+
+//background
+
+body{
+	background: $dusk;
+}
+
+p {
+	@include subtitletext;
+}
+
+.arrow {
+  width: 41px;
+  height: 48px;
+}
+
+.Button-Background {
+  width: 185px;
+  height: 40px;
+  border-radius: 18px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), inset 0 2px 0 0 #ffffff;
+  border: solid 1px #979797;
+  background-color: $very-light-pink;
+  @include filterText;
+}
+
+.sectiontwo-title {
+  width: 250px;
+  height: 97px;
+  text-shadow: 0 3px 5px $black-50;
+  @include work-text;
+}
+
+.work {
+	background: $very-light-pink;
+	height: 2308px;
+}
+
+.project {
+  width: 215px;
+  height: 195px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 4px 0 $black-50;
+  border: solid 1px $brown-grey;
+  background-color: $very-light-pink-two;
+}
+
+.footer-title {
+  width: 293px;
+  height: 162px;
+  text-shadow: 0 5px 7px $black-50;
+  @include Text-Style-3;
+}
+
