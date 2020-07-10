@@ -85,17 +85,6 @@ h1 {
   color: $very-light-pink;
 }
 
-title {
-  font-family: Jonah;
-  font-size: 58px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: 3.13px;
-  text-align: center;
-  color: $very-light-pink;
-}
 
 h3 {
   font-family: Impact;
@@ -136,6 +125,9 @@ h2 {
   letter-spacing: 3.13px;
   text-align: center;
   color: $very-light-pink;
+  span {
+    font-size: 22px;
+  }
 }
 
 

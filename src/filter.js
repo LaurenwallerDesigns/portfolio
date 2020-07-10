@@ -3,7 +3,9 @@ import React from 'react';
 class Filter extends React.Component {
 	render () {
 		return (
-			<button className='Button-Background'>Filter By</button>
+			<div className="div-filter">
+				<button className='Button-Background'>Filter By</button>
+			</div>
 		);
 	}
 }
