@@ -22,8 +22,6 @@ class Qual extends React.Component {
 							id="four" />
 						<Blurbs
 							id="five" />
-						<Blurbs
-							id="six" />
 					</div>
 
 			</section>

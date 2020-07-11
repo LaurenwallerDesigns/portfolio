@@ -1,4 +1,4 @@
-@import 'colors', 'fonts', 'mixins';
+@import 'colors', 'fonts', 'mixins', 'textBlurbs';
 
 
 //background
@@ -27,12 +27,13 @@ header{
 
 .title {
 	margin-top: 0px;
-	padding-top: 25%;
+	padding-top: 15%;
+	padding-bottom: 10%;
   	width: 278px;
   	height: 140px;
 	@include text-shadow;
 	font-family: Jonah;
-	font-size: 72px;
+	font-size: 92px;
 	font-weight: normal;
 	font-stretch: normal;
 	font-style: normal;
@@ -47,6 +48,7 @@ header{
 	margin-top: 20%;
 	margin-bottom: 50%;
 	@include text-shadow;
+	@include header-subtitle-mobile-p;
 
 }
 
@@ -69,19 +71,37 @@ header{
 
 //section Two
 .section-title{
+	@include section-two-header-mobile-p;
 	@include text-shadow;	
 }
 
 
 p {
-	@include subtitletext;
+  font-family: AlegreyaSans;
+  font-size: 21px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 3.13px;
+  text-align: center;
+  color: $very-light-pink;
 	@include text-shadow;
 
 }
 
-.arrow-wrapper {
-	text-align: center;
+li{
+	@include blurb-info-mobile-p;
 }
+
+.blurbs div {
+	text-align: center;
+	li{
+		text-align: left;
+	}
+}
+
+
 
 
 //section Three 
@@ -95,11 +115,11 @@ p {
 	margin-top: 50px;
 }
 
-.sectiontwo-title {
+.sectionthree-title {
   width: 250px;
   height: 97px;
-  text-shadow: 0 3px 5px $black-50;
-  @include work-text;
+  @include text-shadow;
+  @include section-three-title-mobile-p;
   margin-top: 0px;
   padding-top: 0px;
   margin-bottom: 0px;
@@ -119,10 +139,9 @@ p {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), inset 0 2px 0 0 #ffffff;
   border: solid 1px #979797;
   background-color: $very-light-pink;
-  @include filterText;
+  @include filter-mobile-p;
   margin-bottom: 15px;
-  	@include text-shadow;
-
+  @include text-shadow;
 }
 
 .project {
@@ -145,8 +164,7 @@ p {
 .footer-title {
   width: 293px;
   height: 162px;
-  text-shadow: 0 5px 7px $black-50;
-  @include Text-Style-3;
+  @include footer-title-mobile-p;
   @include center-element;
   margin-top: 50px;
 }

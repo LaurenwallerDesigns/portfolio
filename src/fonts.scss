@@ -18,11 +18,33 @@
 
 @font-face {
   font-family: AlegreyaSans;
+  src: local(AlegreyaSans-MediumItalic),
+    url(/path/to/AlegreyaSans-MediumItalic.woff2) format("woff2"),
+    url(/path/to/AlegreyaSans-MediumItalic.woff) format("woff"),
+    url(/path/to/AlegreyaSans-MediumItalic.ttf) format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: AlegreyaSans;
   src: local(AlegreyaSans-Bold),
     url(/path/to/AlegreyaSans-Bold.woff2) format("woff2"),
     url(/path/to/AlegreyaSans-Bold.woff) format("woff"),
     url(/path/to/AlegreyaSans-Bold.ttf) format("truetype");
   font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: AlegreyaSans;
+  src: local(AlegreyaSans-Black),
+    url(/path/to/AlegreyaSans-Black.woff2) format("woff2"),
+    url(/path/to/AlegreyaSans-Black.woff) format("woff"),
+    url(/path/to/AlegreyaSans-Black.ttf) format("truetype");
+  font-weight: 900;
   font-style: normal;
   font-stretch: normal;
 }
@@ -49,75 +71,249 @@
   font-stretch: normal;
 }
 
-@mixin work-title {
-  font-family: Impact;
-  font-size: 106px;
-  letter-spacing: 5.19px;
-  text-align: center;
-  color: $dusk;
-}
-
-h1 {
+//Desktop HD
+@mixin header-title-lg {
   font-family: Jonah;
-  font-size: 100px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: 3.37px;
+  font-size: 150px;
+  letter-spacing: 3.79px;
   text-align: center;
   color: $very-light-pink;
 }
 
-@mixin h3----tablet {
+@mixin header-subtitle-lg {
   font-family: Impact;
-  font-size: 70px;
+  font-size: 100px;
   letter-spacing: 3.13px;
   text-align: center;
   color: $very-light-pink;
 }
 
-@mixin Text-Style-3 {
+@mixin section-two-title-lg {
+  font-family: Impact;
+  font-size: 120px;
+  letter-spacing: 3.13px;
+  text-align: center;
+  color: $very-light-pink;
+}
+
+@mixin section-two-subtitle-lg {
+  font-family: AlegreyaSans;
+  font-size: 68px;
+  font-weight: bold;
+  letter-spacing: 5.2px;
+  text-align: center;
+  color: $very-light-pink;
+}
+
+@mixin section-two-blurb-lg {
+  font-family: AlegreyaSans;
+  font-size: 70px;
+  font-weight: bold;
+  letter-spacing: 3.13px;
+  text-align: center;
+  color: $very-light-pink;
+}
+
+@mixin section-three-title-lg {
+  font-family: Impact;
+  font-size: 191px;
+  letter-spacing: 3.48px;
+  text-align: center;
+  color: $dusk;
+}
+
+@mixin filter-list-title-lg {
+  font-family: AlegreyaSans;
+  font-size: 42px;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 12.75px;
+  color: $greyish-brown;
+}
+
+@mixin filter-header-title-lg {
+  font-family: AlegreyaSans;
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 5.32px;
+  text-align: center;
+  color: $black;
+}
+
+@mixin footer-title-lg {
   font-family: Jonah;
-  font-size: 88px;
+  font-size: 170px;
   letter-spacing: 2.33px;
   text-align: center;
   color: $very-light-pink;
 }
 
 
-h3 {
-  font-family: Impact;
-  font-size: 45px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: 4.7px;
+
+
+
+//Desktop
+
+@mixin header-title-desktop {
+  font-family: Jonah;
+  font-size: 109px;
+  letter-spacing: 3.56px;
   text-align: center;
   color: $very-light-pink;
 }
 
-@mixin circle-text-tablet-port {
-  font-family: AlegreyaSans;
-  font-size: 41px;
-  font-weight: bold;
-  letter-spacing: 6.12px;
-  text-align: center;
-  color: $very-light-pink;
-}
-
-@mixin h2-sub----tablet {
+@mixin header-subtitle-desktop {
   font-family: Impact;
-  font-size: 39px;
+  font-size: 60px;
   letter-spacing: 3.13px;
   text-align: center;
   color: $very-light-pink;
 }
 
-h2 {
+
+@mixin section-two-title-desktop {
   font-family: Impact;
+  font-size: 86px;
+  letter-spacing: 3.85px;
+  text-align: center;
+  color: $very-light-pink;
+}
+
+@mixin section-two-subtitle-desktop {
+  font-family: AlegreyaSans;
+  font-size: 45px;
+  font-weight: bold;
+  letter-spacing: 3.44px;
+  text-align: center;
+  color: $very-light-pink;
+}
+
+@mixin section-three-title-desktop {
+  font-family: Impact;
+  font-size: 172px;
+  letter-spacing: 3.13px;
+  text-align: center;
+  color: $dusk;
+}
+
+@mixin footer-title-desktop {
+  font-family: Jonah;
+  font-size: 130px;
+  letter-spacing: 2.33px;
+  text-align: center;
+  color: $very-light-pink;
+}
+
+
+
+//Mobile Landscape
+
+@mixin header-subtitle-mobile-land {
+  font-family: Impact;
+  font-size: 49px;
+  letter-spacing: 3.13px;
+  text-align: center;
+  color: $very-light-pink;
+}
+
+@mixin section-two-title-mobile-land {
+  font-family: Impact;
+  font-size: 52px;
+  letter-spacing: 5.43px;
+  text-align: center;
+  color: $very-light-pink;
+}
+
+@mixin section-two-subtitle-mobile-land {
+  font-family: AlegreyaSans;
+  font-size: 31px;
+  font-weight: bold;
+  letter-spacing: 4.63px;
+  text-align: center;
+  color: $very-light-pink;
+}
+
+@mixin section-two-blurb-mobile-land {
+  font-family: AlegreyaSans;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 4.48px;
+  text-align: center;
+  color: $very-light-pink;
+}
+
+@mixin section-three-title-mobile-land {
+  font-family: Impact;
+  font-size: 130px;
+  letter-spacing: 6.37px;
+  text-align: center;
+  color: $dusk;
+}
+
+@mixin footer-title-mobile-land {
+  font-family: Jonah;
+  font-size: 130px;
+  letter-spacing: 4.39px;
+  text-align: center;
+  color: $very-light-pink;
+}
+
+
+
+
+
+//Tablet Portrait
+
+@mixin header-title-tab-p {
+  font-family: Jonah;
+  font-size: 88px;
+  letter-spacing: 3.13px;
+  text-align: center;
+  color: $very-light-pink;
+}
+
+@mixin section-two-subtitle-tab-p {
+  font-family: AlegreyaSans;
+  font-size: 41px;
+  font-weight: bold;
+  letter-spacing: 3.13px;
+  text-align: center;
+  color: $very-light-pink;
+}
+
+@mixin section-two-blurb-tab-p {
+  font-family: AlegreyaSans;
   font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 3.13px;
+  text-align: center;
+  color: $very-light-pink;
+}
+
+@mixin section-three-title-tab-p {
+  font-family: Impact;
+  font-size: 125px;
+  letter-spacing: 3.13px;
+  text-align: center;
+  color: $dusk;
+}
+
+@mixin footer-title-tab-p {
+  font-family: Jonah;
+  font-size: 94px;
+  letter-spacing: 2.33px;
+  text-align: center;
+  color: $very-light-pink;
+}
+
+
+
+
+// Mobile Portrait
+@mixin header-subtitle-mobile-p {
+  text-shadow: 0 3px 5px $black-50;
+  font-family: Impact;
+  font-size: 27px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -126,50 +322,69 @@ h2 {
   text-align: center;
   color: $very-light-pink;
   span {
-    font-size: 22px;
+    font-size: 21px;
   }
 }
 
-
-@mixin Text-Style {
-  font-family: Impact;
-  font-size: 27px;
-  letter-spacing: 3.13px;
-  text-align: center;
-  color: $very-light-pink;
-}
-
-@mixin Text-Style-2 {
-  font-family: Impact;
-  font-size: 21px;
-  letter-spacing: 3.13px;
-  text-align: center;
-  color: $very-light-pink;
-}
-
-@mixin subtitletext {
+@mixin blurb-info-mobile-p {
   font-family: AlegreyaSans;
   font-size: 21px;
   font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
   letter-spacing: 3.13px;
   text-align: center;
   color: $very-light-pink;
+  list-style: none;
 }
 
-@mixin filterText {
+@mixin filter-mobile-p{
+  text-shadow: 0 1px 0 #ffffff;
   font-family: AlegreyaSans;
   font-size: 26px;
   font-weight: bold;
+  font-stretch: normal;
   font-style: italic;
+  line-height: normal;
   letter-spacing: 6.07px;
   text-align: center;
   color: $greyish-brown;
 }
 
-@mixin work-text {
+@mixin section-two-header-mobile-p {
+  font-family: Impact;
+  font-size: 30px;
+  letter-spacing: 3.13px;
+  text-align: center;
+  color: $very-light-pink;
+}
+
+@mixin section-three-title-mobile-p {
+  text-shadow: 0 3px 5px $black-50;
   font-family: Impact;
   font-size: 64px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
   letter-spacing: 3.13px;
   text-align: center;
   color: $dusk;
 }
+
+@mixin footer-title-mobile-p {
+  text-shadow: 0 5px 7px $black-50;
+  font-family: Jonah;
+  font-size: 69px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 2.33px;
+  text-align: center;
+  color: $very-light-pink;
+}
+
+
+

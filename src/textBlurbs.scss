@@ -1,0 +1,82 @@
+.blurbs{
+	#one{
+		p::after{
+			content: "HTML5";
+		}
+		ul {
+			li:nth-child(1)::after {
+				content: "- Best Practices";
+			}
+			li:nth-child(2)::after {
+				content: "- Semantic HTML";
+			}
+		}
+	}
+
+	#two{
+		p::after{
+			content: "CSS/CSS3";
+		}
+		ul {
+			li:nth-child(1)::after {
+				content: "- SCSS/SASS";
+			}
+			li:nth-child(2)::after {
+				content: "- LESS";
+			}
+			li:nth-child(3)::after {
+				content: "- Bootstrap";
+			}
+		}
+	}
+
+	#three{
+		p::after{
+			content: "Javascript";
+		}
+		ul {
+			li:nth-child(1)::after {
+				content: "- ReactJs";
+			}
+			li:nth-child(2)::after {
+				content: "- JQuery";
+			}
+			li:nth-child(3)::after {
+				content: "- AJAX";
+			}
+		}
+	}
+
+	#four{
+		p::after{
+			content: "Responsive Web Development";
+		}
+		ul {
+			li:nth-child(1)::after {
+				content: "- Mobile First";
+			}
+			li:nth-child(2)::after {
+				content: "- FlexBox";
+			}
+			li:nth-child(3)::after {
+				content: "- UX/UI Design";
+			}
+		}
+	}
+	#five{
+		p::after{
+			content: "Wireframes/Mock-ups";
+		}
+		ul {
+			li:nth-child(1)::after {
+				content: "- Sketch";
+			}
+			li:nth-child(2)::after {
+				content: "- Adobe Photoshop";
+			}
+			li:nth-child(3)::after {
+				content: "- Zeplin";
+			}
+		}
+	}
+}

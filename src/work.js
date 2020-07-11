@@ -6,7 +6,7 @@ class Work extends React.Component {
 	render () {
 		return (
 			<section className="work">
-				<h2 className="sectiontwo-title">
+				<h2 className="sectionthree-title">
 					My Work
 				</h2>
 				<Filter />
