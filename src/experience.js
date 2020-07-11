@@ -25,9 +25,7 @@ class Qual extends React.Component {
 						<Blurbs
 							id="six" />
 					</div>
-				<div className="arrow-wrapper">
-					<img src={downArrow} className='arrow' />
-				</div>
+
 			</section>
 		);
 	}

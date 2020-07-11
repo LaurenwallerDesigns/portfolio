@@ -9,7 +9,9 @@ body{
 
 //Section One
 header{
+	height: 100vh;
 	text-align: center;
+	@include bottom-line;
 }
 
 .headerDesign {
@@ -25,12 +27,12 @@ header{
 
 .title {
 	margin-top: 0px;
-	padding-top: 5px;
+	padding-top: 25%;
   	width: 278px;
   	height: 140px;
-	text-shadow: 0 4px 7px $black-50;
+	@include text-shadow;
 	font-family: Jonah;
-	font-size: 58px;
+	font-size: 72px;
 	font-weight: normal;
 	font-stretch: normal;
 	font-style: normal;
@@ -41,6 +43,24 @@ header{
 	@include center-element;
 }
 
+.subtitle-text {
+	margin-top: 20%;
+	margin-bottom: 50%;
+	@include text-shadow;
+
+}
+
+//arrows
+
+.arrows {
+	position: fixed;
+	right: 0px;
+	top: 50%;
+	width: 100px;
+	text-align: right;
+	z-index: 4;
+}
+
 .arrow {
   width: 61px;
   height: 98px;
@@ -48,9 +68,15 @@ header{
 
 
 //section Two
+.section-title{
+	@include text-shadow;	
+}
+
 
 p {
 	@include subtitletext;
+	@include text-shadow;
+
 }
 
 .arrow-wrapper {
@@ -95,6 +121,8 @@ p {
   background-color: $very-light-pink;
   @include filterText;
   margin-bottom: 15px;
+  	@include text-shadow;
+
 }
 
 .project {
@@ -129,8 +157,9 @@ p {
   border-radius: 38px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.33);
   border: solid 1px $brown-grey;
-  background-color: $very-light-pink-two;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.85);
+  background-color: $blush;
+  @include text-shadow;
+
   font-family: Impact;
   font-size: 28px;
   font-weight: normal;
@@ -139,7 +168,7 @@ p {
   line-height: normal;
   letter-spacing: 3.92px;
   text-align: center;
-  color: $blush;
+  color: $very-light-pink;
   margin-bottom: 25px;
 }
 

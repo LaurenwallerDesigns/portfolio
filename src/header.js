@@ -1,5 +1,5 @@
 import React from 'react';
-import downArrow from './img/downarrow.svg';
+
 class Header extends React.Component {
 	render () {
 		return (
@@ -16,7 +16,6 @@ class Header extends React.Component {
 						<span>Portfolio</span>
 					</h2>
 				</div>
-				<img src={downArrow} className='arrow' />
 			</header>
 		);
 	}
