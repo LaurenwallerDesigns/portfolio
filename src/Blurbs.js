@@ -4,7 +4,7 @@ import oval from './img/oval.svg';
 class Blurbs extends React.Component {
 	render () {
 		return (
-			<div id={this.props.id}>
+			<div id={this.props.id} className="blurb-container">
 				<img src={oval} />
 			</div>
 		);

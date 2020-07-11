@@ -26,6 +26,8 @@ class App extends React.Component {
     console.log(blurbs);
 
     blurbs.forEach( b => {
+      const div = document.createElement("div");
+      div.setAttribute("class", "div-blurb-text");
       const titleNode = document.createElement("P");
         titleNode.setAttribute("class", "blurb-title");
       const ul = document.createElement("UL");
@@ -35,8 +37,9 @@ class App extends React.Component {
         ul.appendChild(li);
         ul.appendChild(liTwo);
         ul.appendChild(liThree);
-        b.appendChild(titleNode);
-        b.appendChild(ul);
+        div.appendChild(titleNode);
+        div.appendChild(ul);
+        b.appendChild(div);
     })
   }
   render () {
