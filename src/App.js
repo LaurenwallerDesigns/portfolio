@@ -10,8 +10,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      clickCount: 0
     };
+    this.arrowClick = this.arrowClick.bind(this);
   }
    componentDidMount() {
     this.insertText();
@@ -42,11 +43,20 @@ class App extends React.Component {
         b.appendChild(div);
     })
   }
+
+  arrowClick() {
+    const sections = document.getElementsByClassName("section");
+    const firstSection = sections[0];
+    console.log(firstSection);
+
+  }
   render () {
     return (
       <body>
       <Header />
-      <Arrows />
+      <Arrows
+        href = {this.arrowClick}
+        onClick= {this.arrowClick()} />
       <Experience />
       <Work />
       <Footer />

@@ -1,0 +1,3 @@
+@mixin transform($x, $y, $p, $p2) {
+	clip-path: ellipse($x $y at $p $p2);	
+}

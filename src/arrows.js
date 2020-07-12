@@ -8,7 +8,9 @@ class Arrows extends React.Component {
 		return (
 			<div className="arrows">
 				<img src={upArrow} className='arrow' />
+				<a href=".section" onClick={this.props.onClick}>
 				<img src={downArrow} className='arrow' />
+				</a>
 			</div>
 		);
 	}

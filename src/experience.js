@@ -3,9 +3,21 @@ import Blurbs from './Blurbs.js';
 import downArrow from './img/downarrow.svg';
 
 class Qual extends React.Component {
+	constructor(props) {
+    	super(props);
+    	this.state = {
+
+    	};
+  	}
+   componentDidMount() {
+  	}
+
+  	componentWillUnmount() {
+  	}	
+
 	render () {
 		return (
-			<section>
+			<section id="experience" className="section">
 				<h2 className="section-title"> Qualifications </h2>
 					<p className="section-subtitle">
 						5 years experience

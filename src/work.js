@@ -5,7 +5,7 @@ import Prevprojects from './prevproject.js';
 class Work extends React.Component {
 	render () {
 		return (
-			<section className="work">
+			<section className="work section" id="work">
 				<h2 className="sectionthree-title">
 					My Work
 				</h2>
