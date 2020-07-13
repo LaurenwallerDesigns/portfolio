@@ -7,9 +7,11 @@ class Arrows extends React.Component {
 	render () {
 		return (
 			<div className="arrows">
-				<img src={upArrow} className='arrow' />
-				<a href=".section" onClick={this.props.onClick}>
-				<img src={downArrow} className='arrow' />
+				<a href={this.props.href} onClick={this.props.onClick}>
+					<img src={upArrow} className='arrow' id='upArrow' />
+				</a>
+				<a href={this.props.href} onClick={this.props.onClick}>
+					<img src={downArrow} id='downArrow' className='arrow' />
 				</a>
 			</div>
 		);

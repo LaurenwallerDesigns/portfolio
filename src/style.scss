@@ -2,6 +2,10 @@
 
 
 //background
+* {
+	scroll-behavior: smooth;
+
+}
 
 body{
 	background: $dusk;
@@ -68,7 +72,9 @@ header{
   height: 98px;
 }
 
-
+.hide {
+	display: none;
+}
 //section Two
 
 

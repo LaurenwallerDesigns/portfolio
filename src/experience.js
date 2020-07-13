@@ -17,7 +17,7 @@ class Qual extends React.Component {
 
 	render () {
 		return (
-			<section id="experience" className="section">
+			<section id="experience">
 				<h2 className="section-title"> Qualifications </h2>
 					<p className="section-subtitle">
 						5 years experience
