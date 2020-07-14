@@ -17,6 +17,7 @@ class App extends React.Component {
   }
    componentDidMount() {
     this.insertText();
+    document.getElementById('upArrow').classList.add('hide');
     window.addEventListener('scroll', this.scrollTop);
   }
 
@@ -26,38 +27,35 @@ class App extends React.Component {
 
   scrollTop() {
     const sectionOne = document.querySelector('#header').offsetTop;
-    const sectionTwo = document.querySelector('#experience').offsetTop;
-    const sectionThree = document.querySelector('#work').offsetTop;
-    const sectionFour = document.querySelector('#footer').offsetTop - 600;
-
+    const sectionTwo = document.querySelector('#experience').offsetTop - 100;
+    const sectionThree = document.querySelector('#work').offsetTop - 70;
+    const sectionFour = document.querySelector('#footer').offsetTop - 800;
     const winScroll = window.pageYOffset;
     const sectionPos = [sectionOne, sectionTwo, sectionThree, sectionFour];
-    console.log(sectionPos);
-    console.log(winScroll);
-    sectionPos.map((sec, index) => {
-      if(winScroll >= sec) {
-        return this.sectionIndex = index;
-        console.log(this.sectionIndex);
+    sectionPos.forEach(s => {
+      if(winScroll >= s) {
+        this.section = s;
       }
     });
-    if(this.sectionIndex === 0) {
-        const upArrow = document.getElementById('upArrow');
+
+    const position = sectionPos.indexOf(this.section);
+    if(position < 1){
+      const upArrow = document.getElementById('upArrow');
             upArrow.classList.add('hide');
-    } else if(this.sectionIndex === 3) {
+    }else if (position >= 3){
       const downArrow = document.getElementById('downArrow');
-          downArrow.classList.add('hide');
-    } else {
-      const downArrow = document.getElementById('downArrow');
-          downArrow.classList.remove('hide');
+            downArrow.classList.add('hide');
+    }else {
       const upArrow = document.getElementById('upArrow');
           upArrow.classList.remove('hide');
+      const downArrow = document.getElementById('downArrow');
+          downArrow.classList.remove('hide');
     }
+    return position;
   }
 
   insertText() {
     const blurbs = document.querySelectorAll(".blurbs div");
-    console.log(blurbs);
-
     blurbs.forEach( b => {
       const div = document.createElement("div");
       div.setAttribute("class", "div-blurb-text");
@@ -80,20 +78,21 @@ class App extends React.Component {
     const button = event.target.id;
     const sections = ["#header", "#experience", "#work", "#footer"];
     if(button === "downArrow"){
-      // this.clickCount = this.state.clickCount + 1;
-      const next = sections[this.sectionIndex + 1];
-      console.log(this.sectionIndex);
+      const position = this.scrollTop();
+      const next = sections[position + 1];
       this.setState({
         section: next
       });
 
     }else if (button === "upArrow"){
-      const prev = sections[this.sectionIndex - 1];
+      const position = this.scrollTop();
+      const prev = sections[position - 1];
       this.setState({
         section: prev
       });
     }
   }
+
 
   render () {
     return (
