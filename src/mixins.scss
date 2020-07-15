@@ -4,13 +4,17 @@
 }
 
 @mixin bottom-line {
-	border: 1px solid $butterscotch;
+	border: 1px solid $dkpurple;
 	border-bottom-style: solid;
 	border-top-style: none;
   	border-right-style: none;
   	border-left-style: none;
 }
 
-@mixin text-shadow {
+@mixin text-shadow-20 {
+	text-shadow: 0 4px 7px $black-20;
+}
+
+@mixin text-shadow-50 {
 	text-shadow: 0 4px 7px $black-50;
 }

@@ -10,22 +10,24 @@ class Work extends React.Component {
 					My Work
 				</h2>
 				<Filter />
-				<Prevprojects
-					id="prev-one" />
-				<Prevprojects
-					id="prev-two" />
-				<Prevprojects
-					id="prev-three" />
-				<Prevprojects
-					id="prev-four" />
-				<Prevprojects
-					id="prev-five" />
-				<Prevprojects
-					id="prev-six" />
-				<Prevprojects
-					id="prev-seven" />
-				<Prevprojects
-					id="prev-eight" />
+				<div className="flex-project">
+					<Prevprojects
+						id="prev-one" />
+					<Prevprojects
+						id="prev-two" />
+					<Prevprojects
+						id="prev-three" />
+					<Prevprojects
+						id="prev-four" />
+					<Prevprojects
+						id="prev-five" />
+					<Prevprojects
+						id="prev-six" />
+					<Prevprojects
+						id="prev-seven" />
+					<Prevprojects
+						id="prev-eight" />
+				</div>
 			</section>
 		);
 	}

@@ -8,10 +8,10 @@ class Arrows extends React.Component {
 		return (
 			<div className="arrows">
 				<a href={this.props.href} onClick={this.props.onClick}>
-					<img src={upArrow} className='arrow' id='upArrow' />
+					<img src={upArrow} className='arrow' id='upArrow' alt="" />
 				</a>
 				<a href={this.props.href} onClick={this.props.onClick}>
-					<img src={downArrow} id='downArrow' className='arrow' />
+					<img src={downArrow} id='downArrow' className='arrow' alt="" />
 				</a>
 			</div>
 		);

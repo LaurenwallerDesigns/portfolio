@@ -6,8 +6,8 @@ class Footer extends React.Component {
 		return (
 			<div id="footer" className="wrapper section" style={{height: '100%', position: 'relative'}}>
 				<footer 
-					style={{backgroundImage: "url(" + footersvg + ")", width: window.innerWidth + 'px', height: "458px", position: 'absolute', bottom: '0', left: "0px", marginBottom: '0'}}>
-					<h1 className='footer-title' style={{fontSize: "62px"}}> Contact Me </h1>
+					style={{backgroundImage: "url(" + footersvg + ")", position: 'absolute', bottom: '0', left: "0px", marginBottom: '0'}}>
+					<h1 className='footer-title'> Contact Me </h1>
 					<button className="email"> Email </button>
 				</footer>
 			</div>

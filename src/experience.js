@@ -1,6 +1,5 @@
 import React from 'react';
 import Blurbs from './Blurbs.js';
-import downArrow from './img/downarrow.svg';
 
 class Qual extends React.Component {
 	constructor(props) {
