@@ -14,6 +14,7 @@ class App extends React.Component {
       section: "#experience"
     };
     this.arrowClick = this.arrowClick.bind(this);
+    this.filterBtn = this.filterBtn.bind(this);
   }
    componentDidMount() {
     this.insertText();
@@ -93,6 +94,13 @@ class App extends React.Component {
     }
   }
 
+  filterBtn(event) {
+    const filterMenu = document.getElementById('filter-menu');
+    filterMenu.classList.toggle('hide');
+    const filterBtn = document.getElementById('filterBtn');
+    filterBtn.classList.toggle('hide');
+  }
+
 
   render () {
     return (
@@ -102,7 +110,8 @@ class App extends React.Component {
         href={this.state.section}
         onClick= {this.arrowClick} />
       <Experience />
-      <Work />
+      <Work 
+        onclick={this.filterBtn}/>
       <Footer />
       </body>
     );

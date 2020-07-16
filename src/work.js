@@ -9,7 +9,9 @@ class Work extends React.Component {
 				<h2 className="sectionthree-title">
 					My Work
 				</h2>
-				<Filter />
+				<Filter 
+					onClick={this.props.onclick}
+				/>
 				<div className="flex-project">
 					<Prevprojects
 						id="prev-one" />

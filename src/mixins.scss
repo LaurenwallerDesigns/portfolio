@@ -18,3 +18,32 @@
 @mixin text-shadow-50 {
 	text-shadow: 0 4px 7px $black-50;
 }
+
+@mixin text-shadow-below {
+	text-shadow: -2px 8px 7px $black-50;
+}
+
+@mixin blurb-sizing($width: false) {
+	width:100vw;
+	height: 30vh;
+	position: relative;
+	background-color: $orange;
+	.div-blurb-text {
+		z-index: 3;
+		.blurb-title {
+			@include p-mobile-p;
+			margin-bottom: 0vh;
+			@if $width {
+				@include center-element;
+				width: 50vw;
+				padding-top: 4vh;
+			} @else {
+				padding-top: 6vh;
+			}
+		}
+		ul {
+			padding-left: 0vw;
+			@include li-blurb-mobile-p;
+		}
+	}
+}

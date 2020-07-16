@@ -312,7 +312,7 @@
 // Mobile Portrait
 
 @mixin title-mobile-p {
-  width: 90vw;
+  width: 80vw;
   @include text-shadow-50;
   font-family: Jonah;
   font-size: 4em;
@@ -325,7 +325,7 @@
   color: $dkpurple;
   @include center-element;
   @media (min-width: $breakpoint-tablet-port) {
-    font-size: 8em;
+    font-size: 6.5em;
     width: 70vw;
   }
 }
@@ -433,7 +433,7 @@
 
 
 @mixin section-three-title-mobile-p {
-  @include text-shadow-50;
+  @include text-shadow-below;
   font-family: Impact;
   font-size: 4em;
   font-weight: normal;
@@ -465,9 +465,6 @@
   @media (min-width: $breakpoint-tablet-port) {
     font-size: 2em;
   }
-  @media (min-width: $breakpoint-tablet-land) {
-    font-size: 3em;
-  }
 }
 
 @mixin footer-title-mobile-p {
@@ -482,10 +479,7 @@
   text-align: center;
   color: $dkpurple;
   @media (min-width: $breakpoint-tablet-port) {
-    font-size: 4.5em;
-  }
-  @media (min-width: $breakpoint-tablet-land) {
-    font-size: 6em;
+    font-size: 4em;
   }
 }
 

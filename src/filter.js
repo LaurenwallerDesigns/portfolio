@@ -4,7 +4,10 @@ class Filter extends React.Component {
 	render () {
 		return (
 			<div className="div-filter">
-				<button className='Button-Background'>Filter By</button>
+				<button onClick={this.props.onClick} className='Button-Background' id="filterBtn">Filter By</button>
+				<div id="filter-menu" className="hide">
+				<button onClick={this.props.onClick} className="close"> X </button>
+				</div>
 			</div>
 		);
 	}
