@@ -1,6 +1,5 @@
 import React from 'react';
 import Filter from './filter.js';
-import Prevprojects from './prevproject.js';
 
 class Work extends React.Component {
 	render () {
@@ -11,24 +10,13 @@ class Work extends React.Component {
 				</h2>
 				<Filter 
 					onClick={this.props.onclick}
+					handleFilter={this.props.handleFilter}
+					handleFormSubmit={this.props.handleFormSubmit}
+        			selectAll={this.props.selectAll}
+        			deselectAll={this.props.deselectAll}
 				/>
 				<div className="flex-project">
-					<Prevprojects
-						id="prev-one" />
-					<Prevprojects
-						id="prev-two" />
-					<Prevprojects
-						id="prev-three" />
-					<Prevprojects
-						id="prev-four" />
-					<Prevprojects
-						id="prev-five" />
-					<Prevprojects
-						id="prev-six" />
-					<Prevprojects
-						id="prev-seven" />
-					<Prevprojects
-						id="prev-eight" />
+					{this.props.renderP}
 				</div>
 			</section>
 		);

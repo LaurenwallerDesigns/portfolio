@@ -9,7 +9,7 @@ $breakpoint-tablet-land: 1024px;
 
 }
 
-body{
+#root{
 	background: $lavender;
 	overflow-x: hidden;
 }
@@ -85,7 +85,7 @@ header{
 }
 
 .hide {
-	visibility: hidden;
+	display: none;
 }
 //section Two
 
@@ -233,7 +233,6 @@ li{
 
 .Button-Background {
   width: 35vw;
-  height: 5vh;
   border-radius: 18px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), inset 0 2px 0 0 #ffffff;
   border: solid 1px #979797;
@@ -251,8 +250,9 @@ li{
 #filter-menu {
 position:relative;
 	background: $lavender;
-	width: 60vw;
-	height: 70vh;
+	width: 30vw;
+	height: auto;
+	border-radius: 18px;
 	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 	.close {
 		position: absolute;
@@ -264,6 +264,39 @@ position:relative;
 		font-size: 1.5em;
 	}
 }
+
+.buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 30vw;
+	margin-top: 5vh;
+	padding-bottom: 5vh;
+	.btn {
+		width: 30%;
+		background-color: $orange;
+		color: #fff;
+		border: none;
+		border-radius: 18px;
+		box-shadow: 0px 3px 2px $black-50;
+		&:hover {
+			box-shadow: 0px -3px 2px $black-50;
+		}
+	}
+}
+
+.option-title{
+	padding-top: 5vh;
+	padding-left: 2vw;
+	text-align: left;
+}
+.form-check {
+	padding-left: 2vw;
+	input{
+		width: auto;
+	}
+}
+
 
 .flex-project {
 	@media (min-width: $breakpoint-tablet-port) {

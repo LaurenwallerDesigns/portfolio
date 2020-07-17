@@ -6,12 +6,33 @@ import Arrows from './arrows.js';
 import Experience from './experience.js';
 import Work from './work.js';
 import Footer from './Footer.js';
+import Checkbox from './checkbox';
+import Prevprojects from './prevproject';
+
+
+const OPTIONS = ["react", "js", "html", "AJAX", "css", "SCSS", "Less", "JSON-T", "Bootstrap"];
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       clickCount: 0,
-      section: "#experience"
+      section: "#experience",
+      checkboxes: OPTIONS.reduce(
+        (options, option) => ({
+          ...options,
+          [option]: false
+        }),
+        {}
+      ),
+      projects: [{
+        lang: "react"},
+        {lang: "js"},
+        {lang: "html"},
+        {lang: "AJAX"},
+        {lang: "css"},
+        {lang: "react"},
+        {lang: "css"},
+        {lang: "Bootstrap"}]
     };
     this.arrowClick = this.arrowClick.bind(this);
     this.filterBtn = this.filterBtn.bind(this);
@@ -101,19 +122,83 @@ class App extends React.Component {
     filterBtn.classList.toggle('hide');
   }
 
+  selectAllCheckboxes = isSelected => {
+    Object.keys(this.state.checkboxes).forEach(checkbox => {
+      this.setState(prevState => ({
+        checkboxes: {
+          ...prevState.checkboxes,
+          [checkbox]: isSelected
+        }
+      }));
+    });
+  };
+
+  selectAll = () => this.selectAllCheckboxes(true);
+
+  deselectAll = () => this.selectAllCheckboxes(false);
+
+  handleCheckboxChange = changeEvent => {
+    const { name } = changeEvent.target;
+
+    this.setState(prevState => ({
+      checkboxes: {
+        ...prevState.checkboxes,
+        [name]: !prevState.checkboxes[name]
+      }
+    }));
+  };
+
+  handleFormSubmit = formSubmitEvent => {
+    formSubmitEvent.preventDefault();
+    console.log('ran');
+
+    Object.keys(this.state.checkboxes)
+      .filter(checkbox => this.state.checkboxes[checkbox])
+      .forEach(checkbox => {
+        console.log(this.state.checkboxes[checkbox]);
+      });
+  };
+
+  createCheckbox = option => (
+    <Checkbox
+      label={option}
+      isSelected={this.state.checkboxes[option]}
+      onCheckboxChange={this.handleCheckboxChange}
+      key={option}
+    />
+  );
+
+  createCheckboxes = () => OPTIONS.map(this.createCheckbox);
+
 
   render () {
+    this.renderProjects = this.state.projects.map((num, index) => {
     return (
-      <body>
+        <Prevprojects
+          id={index}
+          className={num.lang}
+          key={index}
+        />
+
+    );
+  });
+    return (
+      <React.Fragment>
       <Header />
       <Arrows
         href={this.state.section}
         onClick= {this.arrowClick} />
       <Experience />
       <Work 
-        onclick={this.filterBtn}/>
+        onclick={this.filterBtn}
+        handleFilter={this.createCheckboxes()}
+        handleFormSubmit={this.handleFormSubmit}
+        selectAll={this.selectAll}
+        deselectAll={this.deselectAll}
+        renderP={this.renderProjects}
+        />
       <Footer />
-      </body>
+      </React.Fragment>
     );
   }
 }
