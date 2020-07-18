@@ -24,15 +24,22 @@ class App extends React.Component {
         }),
         {}
       ),
-      projects: [{
-        lang: "react"},
-        {lang: "js"},
-        {lang: "html"},
-        {lang: "AJAX"},
-        {lang: "css"},
-        {lang: "react"},
-        {lang: "css"},
-        {lang: "Bootstrap"}]
+      projects: [{id: "prev-one",
+                  classes: ["react", "html", "css"]},
+                {id: "prev-two",
+                classes: ["AJAX", "html", "css"]},
+                {id: "prev-three",
+                classes: ["html", "css", "js"]},
+                {id: "prev-four",
+                classes: ["html", "css", "js"]},
+                {id: "prev-five",
+                classes: ["html", "css", "js"]},
+                {id: "prev-six",
+                classes: ["html", "css", "js", "Bootstrap"]},
+                {id: "prev-seven",
+                classes: ["html", "css", "js"]},
+                {id: "prev-eight",
+                classes: ["html", "JSON-T", "SCSS"]},]
     };
     this.arrowClick = this.arrowClick.bind(this);
     this.filterBtn = this.filterBtn.bind(this);
@@ -175,8 +182,7 @@ class App extends React.Component {
     this.renderProjects = this.state.projects.map((num, index) => {
     return (
         <Prevprojects
-          id={index}
-          className={num.lang}
+          id={num.id}
           key={index}
         />
 

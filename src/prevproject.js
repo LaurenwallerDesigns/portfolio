@@ -1,12 +1,10 @@
 import React from 'react';
 
-class Prevprojects extends React.Component {
-	render () {
-		return (
-			<div className="project" style={{backgroundColor: '#eee'}}>
-			</div>
-		);
-	}
-}
+const Prevprojects = ({ id }) => (
+	<div id={id} style={{backgroundColor: '#eee'}}>
+	</div>
+
+);
 
 export default Prevprojects;
+

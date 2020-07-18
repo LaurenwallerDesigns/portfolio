@@ -306,27 +306,26 @@ position:relative;
 		flex-wrap: wrap;
 		justify-content: center;
 	}
-}
-
-.project {
-	width: 50vw;
-	height: 40vh;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 8px;
-	box-shadow: 0 2px 4px 0 $black-50;
-	border: solid 1px $lavender;
-	background-color: $dkpurple;
-	@media (min-width: $breakpoint-tablet-port) {
-		width: 33vw;
-		height: 45vh;
-		margin: 5%;
+	div {
+		width: 50vw;
+		height: 40vh;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 8px;
+		box-shadow: 0 2px 4px 0 $black-50;
+		border: solid 1px $lavender;
+		background-color: $dkpurple;
+		@media (min-width: $breakpoint-tablet-port) {
+			width: 33vw;
+			height: 45vh;
+			margin: 5%;
+		}
+		@media (min-width: $breakpoint-tablet-land) {
+	    	height: 45vh;
+	  	}
 	}
-	@media (min-width: $breakpoint-tablet-land) {
-    	height: 45vh;
-  	}
-
 }
+
 
 
 //section four
