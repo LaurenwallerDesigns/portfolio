@@ -2,6 +2,12 @@ import React from 'react';
 import Filter from './filter.js';
 
 class Work extends React.Component {
+	constructor(props) {
+    super(props);
+    this.state = {};
+  	}
+
+
 	render () {
 		return (
 			<section className="work section" id="work">
@@ -16,7 +22,7 @@ class Work extends React.Component {
         			deselectAll={this.props.deselectAll}
 				/>
 				<div className="flex-project">
-					{this.props.renderP}
+					{this.props.filteredProjects}
 				</div>
 			</section>
 		);

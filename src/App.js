@@ -9,6 +9,31 @@ import Footer from './Footer.js';
 import Checkbox from './checkbox';
 import Prevprojects from './prevproject';
 
+const projects = [{id: "prev-one",
+                  classes: ["react", "html", "css"],
+                  display: true},
+                {id: "prev-two",
+                classes: ["AJAX", "html", "css"],
+                display: true},
+                {id: "prev-three",
+                classes: ["html", "css", "js"],
+              display: true},
+                {id: "prev-four",
+                classes: ["html", "css", "js"],
+              display: true},
+                {id: "prev-five",
+                classes: ["html", "css", "js"],
+              display: true},
+                {id: "prev-six",
+                classes: ["html", "css", "js", "Bootstrap"],
+              display: true},
+                {id: "prev-seven",
+                classes: ["html", "css", "js"],
+              display: true},
+                {id: "prev-eight",
+                classes: ["html", "JSON-T", "SCSS"],
+                display: true}
+            ];
 
 const OPTIONS = ["react", "js", "html", "AJAX", "css", "SCSS", "Less", "JSON-T", "Bootstrap"];
 class App extends React.Component {
@@ -24,28 +49,14 @@ class App extends React.Component {
         }),
         {}
       ),
-      projects: [{id: "prev-one",
-                  classes: ["react", "html", "css"]},
-                {id: "prev-two",
-                classes: ["AJAX", "html", "css"]},
-                {id: "prev-three",
-                classes: ["html", "css", "js"]},
-                {id: "prev-four",
-                classes: ["html", "css", "js"]},
-                {id: "prev-five",
-                classes: ["html", "css", "js"]},
-                {id: "prev-six",
-                classes: ["html", "css", "js", "Bootstrap"]},
-                {id: "prev-seven",
-                classes: ["html", "css", "js"]},
-                {id: "prev-eight",
-                classes: ["html", "JSON-T", "SCSS"]},]
+      projects: projects
     };
     this.arrowClick = this.arrowClick.bind(this);
     this.filterBtn = this.filterBtn.bind(this);
   }
    componentDidMount() {
     this.insertText();
+    this.filterProjects();
     document.getElementById('upArrow').classList.add('hide');
     window.addEventListener('scroll', this.scrollTop);
   }
@@ -157,14 +168,51 @@ class App extends React.Component {
 
   handleFormSubmit = formSubmitEvent => {
     formSubmitEvent.preventDefault();
-    console.log('ran');
+    this.selected = [];
 
     Object.keys(this.state.checkboxes)
       .filter(checkbox => this.state.checkboxes[checkbox])
       .forEach(checkbox => {
-        console.log(this.state.checkboxes[checkbox]);
+        this.selected.push(checkbox);
       });
+      this.filterProjects(this.selected);
   };
+
+  filterProjects(array) {
+    const filteredProjects = [];
+    if(array === undefined || array.length < 1) {
+      console.log('the if');
+      this.setState({
+        projects: projects
+      });
+    }else {
+      console.log('the else');
+      for(let project = 0; project < projects.length; project++) {
+          const classes = projects[project].classes;
+          classes.forEach((c) => array.forEach((s) => {
+            if(c === s) {
+              filteredProjects.push(projects[project]);
+            }
+          }))
+
+      }
+      //Filters through projects to only display the project once
+      const result = filteredProjects.filter((item, index) => {
+        console.log(
+          item, 
+          index, 
+          filteredProjects.indexOf(item),
+          filteredProjects.indexOf(item) === index);
+        return filteredProjects.indexOf(item) === index
+      });
+
+      console.log(result);
+      this.setState({
+        projects: result
+      });
+    }
+  }
+
 
   createCheckbox = option => (
     <Checkbox
@@ -179,15 +227,15 @@ class App extends React.Component {
 
 
   render () {
-    this.renderProjects = this.state.projects.map((num, index) => {
-    return (
-        <Prevprojects
-          id={num.id}
-          key={index}
-        />
 
-    );
-  });
+    this.projects = this.state.projects.map((id, index) => {
+      return <Prevprojects 
+              id={id.id}
+              key={index}
+              classes={id.classes}
+              />
+    });
+
     return (
       <React.Fragment>
       <Header />
@@ -201,7 +249,7 @@ class App extends React.Component {
         handleFormSubmit={this.handleFormSubmit}
         selectAll={this.selectAll}
         deselectAll={this.deselectAll}
-        renderP={this.renderProjects}
+        filteredProjects={this.projects}
         />
       <Footer />
       </React.Fragment>
@@ -210,3 +258,4 @@ class App extends React.Component {
 }
 
 export default App;
+

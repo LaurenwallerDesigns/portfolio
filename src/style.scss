@@ -189,7 +189,7 @@ li{
 
 .work {
 	background: $dkpurple;
-	height: 420vh;
+	height: auto;
 	position: relative;
 	padding-top: 85px;
 	margin-top: 50px;
@@ -322,6 +322,10 @@ position:relative;
 		}
 		@media (min-width: $breakpoint-tablet-land) {
 	    	height: 45vh;
+	  	}
+	  	p {
+	  		text-align: center;
+	  		width: 10%;
 	  	}
 	}
 }
