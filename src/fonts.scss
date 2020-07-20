@@ -312,10 +312,10 @@
 // Mobile Portrait
 
 @mixin title-mobile-p {
-  width: 80vw;
+  width: 100%;
   @include text-shadow-50;
   font-family: Jonah;
-  font-size: 4em;
+  font-size: 3.5em;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -325,8 +325,8 @@
   color: $dkpurple;
   @include center-element;
   @media (min-width: $breakpoint-tablet-port) {
-    font-size: 6.5em;
-    width: 70vw;
+    font-size: 5.5em;
+    width: 100%;
   }
 }
 
@@ -370,7 +370,7 @@
 
 @mixin blurb-info-mobile-p {
   font-family: AlegreyaSans;
-  font-size: 1.125em;
+  font-size: 1em;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -384,12 +384,12 @@
 @mixin filter-mobile-p{
   text-shadow: 0 1px 0 #ffffff;
   font-family: AlegreyaSans;
-  font-size: 1.125em;
+  font-size: 0.75em;
   font-weight: bold;
   font-stretch: normal;
   font-style: italic;
   line-height: normal;
-  letter-spacing: 6.07px;
+  letter-spacing: 5px;
   text-align: center;
   color: $dkpurple;
   @media (min-width: $breakpoint-tablet-land) {
@@ -418,9 +418,29 @@
   }
 }
 
+@mixin title-blurb {
+  font-family: AlegreyaSans;
+  font-size: 1.125em;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 3.13px;
+  text-align: center;
+  color: $dkpurple;
+  @include text-shadow-20;
+  @media (min-width: $breakpoint-tablet-port) {
+    font-size: 1.75em;
+    letter-spacing: 6.93px;
+  }
+  @media (min-width: $breakpoint-tablet-land) {
+    font-size: 2.5em;
+  }
+}
+
 @mixin li-blurb-mobile-p {
   font-family: AlegreyaSans;
-  font-size: 1em;
+  font-size: 0.75em;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -428,14 +448,21 @@
   letter-spacing: 3.13px;
   text-align: left;
   color: $dkpurple;
+  width: 100%;
   @include text-shadow-20;
+  @media (min-width: $breakpoint-tablet-port) {
+    font-size: 1.45em;
+  }
+  @media (min-width: $breakpoint-tablet-land) {
+    font-size: 2em;
+  }
 }
 
 
 @mixin section-three-title-mobile-p {
   @include text-shadow-below;
   font-family: Impact;
-  font-size: 4em;
+  font-size: 3.5em;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -471,6 +498,7 @@
   text-shadow: 0 5px 7px $black-50;
   font-family: Jonah;
   font-size: 2.3125em;
+  margin-top: 0px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;

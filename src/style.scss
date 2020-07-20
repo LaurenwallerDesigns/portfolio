@@ -23,39 +23,38 @@ header{
 
 .headerDesign {
 	@include center-element;
-	width: 90vw;
-	height: 40vh;
+	width: 70%;
+	height: 40%;
 	border: 3px solid $orange;
 	border-top-style: none;
   	border-right-style: solid;
   	border-bottom-style: solid;
   	border-left-style: solid;
   	@media (min-width: $breakpoint-tablet-port) {
-		height: 50vh;
-	}
-	@media (min-width: $breakpoint-tablet-land) {
-		width: 80vw;
+		height: 50%;
 	}
 }
 
 .title {
 	margin-top: 0px;
-	padding-top: 5vh;
+	padding-top: 5%;
 	@include title-mobile-p;
+	@media (min-width: $breakpoint-tablet-port) {
+		padding-top: 3%;
+	}
 	@media (min-width: $breakpoint-tablet-land) {
-		padding-top: 12vh;
+		padding-top: 8%;
 	}
 }
 
 .subtitle-text {
-	margin-top: 20vh;
-	margin-bottom: auto;
+	margin-top: 30%;
 	@include header-subtitle-mobile-p;
 	@media (min-width: $breakpoint-tablet-port) {
-		margin-top: 15vh;
+		margin-top: 12%;
 	}
 	@media (min-width: $breakpoint-tablet-land) {
-		margin-top: 10vh;
+		margin-top: 10%;
 	}
 }
 
@@ -63,24 +62,26 @@ header{
 
 .arrows {
 	position: fixed;
-	top: 20%;
+	top: 40%;
 	right: 0px;
 	width: 10vw;
 	height: 20vh;
 	z-index: 4;
-	@media (min-width: $breakpoint-tablet-port) {
-		width: 10vw;
-	}
 	@media (min-width: $breakpoint-tablet-land) {
 		width: 10vw;
 	}
 }
 
 .arrow {
-  	width: 10vw;
-  	height: 20vh;
+  	width: 100%;
+  	height: 50%;
   	@media (min-width: $breakpoint-tablet-port) {
-		width: 8vw;
+		width: 80%;
+		height: 60%;
+	}
+	@media (min-width: $breakpoint-tablet-land) {
+		width: 100%;
+		height: 80%;
 	}
 }
 
@@ -89,10 +90,12 @@ header{
 }
 //section Two
 
-
+#experience {
+	height: 200vh;
+}
 .section-title{
 	@include section-two-header-mobile-p;
-	margin-bottom: 0vh;
+	margin-bottom: 0px;
 }
 
 
@@ -105,79 +108,70 @@ li{
 	@include blurb-info-mobile-p;
 }
 
-
+.blurbs{
+	height: 95vh;
+}
 
 #one {
-	@include transform(30%);
+	@include transform(50%, 35%, 70%, 40%);
 	&:hover {
-		@include transform(40%);
+		@include transform(100%, 35%, 30%, 40%);
 	}
-	@media (min-width: $breakpoint-tablet-port) {
-		@include transform(20%, 40%);
+	@media (min-width: $breakpoint-tablet-land) {
+		@include transform(50%, 40%, 70%, 40%);
 		&:hover {
-			@include transform(30%);
+			@include transform(100%, 40%, 30%, 40%);
 		}
-
-	}
+	} 
 	@include blurb-sizing($width: false);
 }
 
 #two {
-	@include transform(40%);
+	@include transform(50%, 40%, 30%, 40%);
 	&:hover {
-		@include transform(30%);
+		@include transform(100%, 35%, 70%, 40%);
 	}
-	@media (min-width: $breakpoint-tablet-port) {
-		@include transform(30%);
+	@media (min-width: $breakpoint-tablet-land) {
+		@include transform(55%, 45%, 30%, 45%);
 		&:hover {
-			@include transform(20%, 45%);
+			@include transform(100%, 45%, 70%, 45%);
 		}
-	}
+	} 
+
 	@include blurb-sizing($width: false);
 }
 
 #three {
-	@include transform(30%);
+	@include transform(50%, 40%, 70%, 40%);
 	&:hover {
-		@include transform(40%);
+		@include transform(100%, 40%, 30%, 30%);
 	}
-	@media (min-width: $breakpoint-tablet-port) {
-		@include transform(20%);
+	@media (min-width: $breakpoint-tablet-land) {
+		@include transform(55%, 45%, 70%, 45%);
 		&:hover {
-			@include transform(30%, 40%);
+			@include transform(100%, 45%, 30%, 45%);
 		}
-	}
+	} 
+
 	@include blurb-sizing($width: false);
 }
 
 
 #four {
-	@include transform(48%);
+	@include transform(60%, 50%, 30%, 50%);
 	&:hover {
-		@include transform(40%);
-	}
-	@media (min-width: $breakpoint-tablet-port) {
-		@include transform(40%);
-		&:hover {
-			@include transform(25%);
-		}
+		@include transform(100%, 50%, 70%, 50%);
 	}
 	@include blurb-sizing($width: true);
 }
 
 
 #five {
-	@include transform(40%, 45%, 50%, 45%);
+	@include transform(60%, 45%, 70%, 45%);
 	&:hover {
-		@include transform(50%);
+		@include transform(100%, 45%, 30%, 45%);
 	}
-	@media (min-width: $breakpoint-tablet-port) {
-		@include transform(30%, 45%, 50%, 45%);
-		&:hover {
-			@include transform(40%);
-		}
-	}
-	@include blurb-sizing($width: false);
+	@include blurb-sizing($width: true);
 }
 
 
@@ -194,19 +188,19 @@ li{
 	padding-top: 85px;
 	margin-top: 50px;
 	@media (min-width: $breakpoint-tablet-port) {
-		height: 320vh;
+		height: 250vh;
 		text-align: center;
 	}
 	@media (min-width: $breakpoint-tablet-land) {
-    	height: 350vh;
+    	height: 250vh;
   	}
 }
 
 .sectionthree-title {
-  	width: 60vw;
-  	height: 10vh;
+  	width: 100%;
+  	height: auto;
   	@include section-three-title-mobile-p;
-  	margin-top:	0vh;
+  	margin-top:	0%;
   	position: absolute;
   	top: -0.7%;
   	@media (min-width: $breakpoint-tablet-port) {
@@ -232,7 +226,7 @@ li{
 }
 
 .Button-Background {
-  width: 35vw;
+  width: 35%;
   border-radius: 18px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), inset 0 2px 0 0 #ffffff;
   border: solid 1px #979797;
@@ -248,9 +242,9 @@ li{
 
 
 #filter-menu {
-position:relative;
+	position:relative;
 	background: $lavender;
-	width: 30vw;
+	width: 90vw;
 	height: auto;
 	border-radius: 18px;
 	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
@@ -269,11 +263,11 @@ position:relative;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	width: 30vw;
-	margin-top: 5vh;
-	padding-bottom: 5vh;
+	width: 100%;
+	margin-top: 5%;
+	padding-bottom: 5%;
 	.btn {
-		width: 30%;
+		width: 25%;
 		background-color: $orange;
 		color: #fff;
 		border: none;
@@ -286,19 +280,29 @@ position:relative;
 }
 
 .option-title{
-	padding-top: 5vh;
-	padding-left: 2vw;
-	text-align: left;
+	padding-top: 5%;
+	text-align: center;
+	width: 100%;
+}
+
+form{
+	width: 90vw;
 }
 .form-check {
-	padding-left: 2vw;
+	width: 100%;
+	padding-left: 5%;
+	text-align: left;
 	input{
 		width: auto;
+		padding-right: 3%;
 	}
 }
 
 
 .flex-project {
+	min-height: 100vh;
+	@include height(167px, 8px);
+	background-color: $dkpurple;
 	@media (min-width: $breakpoint-tablet-port) {
 		margin-top: 10%;
 		display: flex;
@@ -307,8 +311,8 @@ position:relative;
 		justify-content: center;
 	}
 	div {
-		width: 50vw;
-		height: 40vh;
+		width: 50%;
+		height: 167px;
 		margin-left: auto;
 		margin-right: auto;
 		margin-bottom: 8px;
@@ -333,13 +337,22 @@ position:relative;
 
 
 //section four
+#footer{
+	background-color: $dkpurple;
+	position: relative;
+	height: 40vh;
+	width: 100vw;
+}
 footer{
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 100vw;
-	height: 50vh;
+	width: 100%;
+	height: 100%;
 	@media (min-width: $breakpoint-tablet-port) {
-		height: 50vh;
+		height: 100%;
 	}
 }
 
@@ -349,8 +362,8 @@ footer{
 .footer-title {
 	@include footer-title-mobile-p;
 	@include center-element;
-	padding-top: 15vh;
-	margin-bottom: 5vh;
+	padding-top: 15%;
+	margin-bottom: 5%;
 	@media (min-width: $breakpoint-tablet-port) {
 		padding-top: 10vh;
 		margin-bottom: 5vh;
@@ -358,8 +371,8 @@ footer{
 }
 
 .email {
-	width: 50vw;
-	height: 8vh;
+	width: 50%;
+	height: 25%;
 	border-radius: 38px;
 	box-shadow: 0 2px 4px 0 $black-50;
 	border: solid 1px $orange;

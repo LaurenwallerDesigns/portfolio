@@ -7,7 +7,6 @@ class Work extends React.Component {
     this.state = {};
   	}
 
-
 	render () {
 		return (
 			<section className="work section" id="work">
