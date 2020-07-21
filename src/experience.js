@@ -13,7 +13,6 @@ class Qual extends React.Component {
 
   	componentWillUnmount() {
   	}	
-
 	render () {
 		return (
 			<section id="experience">

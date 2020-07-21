@@ -6,7 +6,6 @@ class Work extends React.Component {
     super(props);
     this.state = {};
   	}
-
 	render () {
 		return (
 			<section className="work section" id="work">

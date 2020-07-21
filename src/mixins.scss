@@ -23,37 +23,36 @@
 	text-shadow: -2px 8px 7px $black-50;
 }
 
-@mixin blurb-sizing($width: false) {
+@mixin blurb-sizing($left: false, $width: false) {
 	width:100%;
 	position: relative;
 	background-color: $orange;
-	@if $width {
-		height: 35%;
-	} @else {
-		height: 33.33%;
-	}
 	.div-blurb-text {
 		z-index: 3;
 		.blurb-title {
 			@include title-blurb;
 			margin-bottom: 0%;
 			@if $width {
-				@include center-element;
-				width: 45%;
-				padding-top: 5%;
+				width: 70vmin;
+				padding-top: 10vmin;
 			} @else {
-				padding-top: 6%;
+				width: 50vmin;
+				padding-top: 12vmin;
 			}
 		}
 		ul {
 			width: 100%;
 			padding-left: 0%;
-			@include li-blurb-mobile-p;
+			@if $left {
+				@include li-blurb-mobile-p(50vmin);
+			} @else {
+				@include li-blurb-mobile-p(10vmin);
+			}
 		}
 	}
 }
 
 
-@mixin height($height, $margin){
-	height: (($height + $margin) * 8) + 40;
+@mixin height($height, $margin, $elNum){
+	height: (($height + $margin) * $elNum) + 40;
 }

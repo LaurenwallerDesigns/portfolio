@@ -315,7 +315,7 @@
   width: 100%;
   @include text-shadow-50;
   font-family: Jonah;
-  font-size: 3.5em;
+  font-size: 16.75vmin;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -325,15 +325,15 @@
   color: $dkpurple;
   @include center-element;
   @media (min-width: $breakpoint-tablet-port) {
-    font-size: 5.5em;
-    width: 100%;
+    width: 80%;
+    font-size: 12.75vh;
   }
 }
 
 @mixin header-subtitle-mobile-p {
   @include text-shadow-20;
   font-family: Impact;
-  font-size: 1.875em;
+  font-size: 8.5vmin;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -342,49 +342,40 @@
   text-align: center;
   color: $dkpurple;
   span {
-    font-size: .75em;
+    font-size: 7vmin;
   }
-  @media (min-width: $breakpoint-tablet-port) {
-    font-size: 2.75em;
+  @media (min-width: $breakpoint-tablet-land) {
+    font-size: 6.5vmin;
+    span{
+      font-size: 5vmin;
+    }
   }
 }
 
 @mixin section-two-header-mobile-p {
   font-family: Impact;
-  font-size: 2.5em;
+  font-size: 12vmin;
   letter-spacing: 4.93px;
   text-align: center;
   color: $dkpurple;
   @include text-shadow-20;
   @media (min-width: $breakpoint-tablet-port) {
-    font-size: 3.75em;
+    font-size: 12vmin;
     letter-spacing: 12.93px;
   }
   @media (min-width: $breakpoint-tablet-land) {
-    font-size: 4.75em;
+    font-size: 10vmin;
     letter-spacing: 16.93px;
     text-align: left;
     padding-left: 2%;
   }
 }
 
-@mixin blurb-info-mobile-p {
-  font-family: AlegreyaSans;
-  font-size: 1em;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: 3.13px;
-  text-align: center;
-  color: $dkpurple;
-  list-style: none;
-}
 
 @mixin filter-mobile-p{
   text-shadow: 0 1px 0 #ffffff;
   font-family: AlegreyaSans;
-  font-size: 0.75em;
+  font-size: 3vmin;
   font-weight: bold;
   font-stretch: normal;
   font-style: italic;
@@ -400,7 +391,7 @@
 
 @mixin p-mobile-p {
   font-family: AlegreyaSans;
-  font-size: 1.425em;
+  font-size: 5vmin;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -410,37 +401,37 @@
   color: $dkpurple;
   @include text-shadow-20;
   @media (min-width: $breakpoint-tablet-port) {
-    font-size: 1.75em;
     letter-spacing: 6.93px;
   }
   @media (min-width: $breakpoint-tablet-land) {
-    font-size: 2em;
+    font-size: 4vmin;
   }
 }
 
 @mixin title-blurb {
   font-family: AlegreyaSans;
-  font-size: 1.125em;
+  font-size:  7vmin;
+  margin-top: 0px;
+  padding-bottom: 0px;
+  @include center-element;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: 3.13px;
-  text-align: center;
   color: $dkpurple;
   @include text-shadow-20;
   @media (min-width: $breakpoint-tablet-port) {
-    font-size: 1.75em;
     letter-spacing: 6.93px;
   }
   @media (min-width: $breakpoint-tablet-land) {
-    font-size: 2.5em;
+    font-size: 5vmin;
   }
 }
 
-@mixin li-blurb-mobile-p {
+@mixin li-blurb-mobile-p($vmin) {
   font-family: AlegreyaSans;
-  font-size: 0.75em;
+  font-size: 4vmin;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -448,8 +439,10 @@
   letter-spacing: 3.13px;
   text-align: left;
   color: $dkpurple;
-  width: 100%;
+  width: $vmin;
+  list-style: none;
   @include text-shadow-20;
+  @include center-element;
   @media (min-width: $breakpoint-tablet-port) {
     font-size: 1.45em;
   }
@@ -462,7 +455,7 @@
 @mixin section-three-title-mobile-p {
   @include text-shadow-below;
   font-family: Impact;
-  font-size: 3.5em;
+  font-size: 20vmin;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -481,7 +474,7 @@
 @mixin email-btn-mobile-p {
   @include text-shadow-50;
   font-family: Impact;
-  font-size: 1.15em;
+  font-size: 5vmin;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -497,7 +490,7 @@
 @mixin footer-title-mobile-p {
   text-shadow: 0 5px 7px $black-50;
   font-family: Jonah;
-  font-size: 2.3125em;
+  font-size: 10vmin;
   margin-top: 0px;
   font-weight: normal;
   font-stretch: normal;

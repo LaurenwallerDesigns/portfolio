@@ -17,27 +17,37 @@ $breakpoint-tablet-land: 1024px;
 //Section One
 header{
 	height: 100vh;
+	max-height: 600px;
+	@media (min-width: $breakpoint-tablet-port) {
+		max-height: 800px;
+	} 
+	@media (min-width: $breakpoint-tablet-land) {
+		max-height: 1000px;
+	} 
 	text-align: center;
 	@include bottom-line;
 }
 
 .headerDesign {
 	@include center-element;
-	width: 70%;
-	height: 40%;
+	width: 70vw;
+	height: 40vh;
 	border: 3px solid $orange;
 	border-top-style: none;
   	border-right-style: solid;
   	border-bottom-style: solid;
   	border-left-style: solid;
   	@media (min-width: $breakpoint-tablet-port) {
-		height: 50%;
+		height: 35%;
+	}
+	@media (min-width: $breakpoint-tablet-land) {
+		height: 55%;
 	}
 }
 
 .title {
 	margin-top: 0px;
-	padding-top: 5%;
+	padding-top: 10vmin;
 	@include title-mobile-p;
 	@media (min-width: $breakpoint-tablet-port) {
 		padding-top: 3%;
@@ -48,10 +58,10 @@ header{
 }
 
 .subtitle-text {
-	margin-top: 30%;
+	margin-top: 25vmin;
 	@include header-subtitle-mobile-p;
 	@media (min-width: $breakpoint-tablet-port) {
-		margin-top: 12%;
+		margin-top: 20%;
 	}
 	@media (min-width: $breakpoint-tablet-land) {
 		margin-top: 10%;
@@ -91,7 +101,7 @@ header{
 //section Two
 
 #experience {
-	height: 200vh;
+	height: auto;
 }
 .section-title{
 	@include section-two-header-mobile-p;
@@ -104,18 +114,19 @@ p {
 }
 
 
-li{
-	@include blurb-info-mobile-p;
-}
 
 .blurbs{
-	height: 95vh;
+	@include height(200px, 2px, 5);
+}
+
+.blurb-container{
+	height: 200px;
 }
 
 #one {
-	@include transform(50%, 35%, 70%, 40%);
+	@include transform(50%, 50%, 70%, 50%);
 	&:hover {
-		@include transform(100%, 35%, 30%, 40%);
+		@include transform(100%, 50%, 30%, 50%);
 	}
 	@media (min-width: $breakpoint-tablet-land) {
 		@include transform(50%, 40%, 70%, 40%);
@@ -123,13 +134,16 @@ li{
 			@include transform(100%, 40%, 30%, 40%);
 		}
 	} 
-	@include blurb-sizing($width: false);
+	@include blurb-sizing($left: false, $width: false);
+	.blurb-title{
+	text-align: right;
+	}
 }
 
 #two {
-	@include transform(50%, 40%, 30%, 40%);
+	@include transform(50%, 50%, 30%);
 	&:hover {
-		@include transform(100%, 35%, 70%, 40%);
+		@include transform(100%, 50%, 70%);
 	}
 	@media (min-width: $breakpoint-tablet-land) {
 		@include transform(55%, 45%, 30%, 45%);
@@ -138,13 +152,16 @@ li{
 		}
 	} 
 
-	@include blurb-sizing($width: false);
+	@include blurb-sizing($left: true, $width: false);
+	.blurb-title{
+	text-align: left;
+	}
 }
 
 #three {
-	@include transform(50%, 40%, 70%, 40%);
+	@include transform(50%, 50%, 70%);
 	&:hover {
-		@include transform(100%, 40%, 30%, 30%);
+		@include transform(100%, 50%, 30%);
 	}
 	@media (min-width: $breakpoint-tablet-land) {
 		@include transform(55%, 45%, 70%, 45%);
@@ -153,25 +170,34 @@ li{
 		}
 	} 
 
-	@include blurb-sizing($width: false);
+	@include blurb-sizing($left: false, $width: false);
+	.blurb-title{
+	text-align: right;
+	}
 }
 
 
 #four {
-	@include transform(60%, 50%, 30%, 50%);
+	@include transform(60%, 50%, 30%);
 	&:hover {
-		@include transform(100%, 50%, 70%, 50%);
+		@include transform(100%, 50%, 70%);
 	}
-	@include blurb-sizing($width: true);
+	@include blurb-sizing($left: true, $width: true);
+	.blurb-title{
+	text-align: left;
+	}
 }
 
 
 #five {
-	@include transform(60%, 45%, 70%, 45%);
+	@include transform(60%, 50%, 70%);
 	&:hover {
-		@include transform(100%, 45%, 30%, 45%);
+		@include transform(100%, 50%, 30%);
 	}
-	@include blurb-sizing($width: true);
+	@include blurb-sizing($left: false, $width: true);
+	.blurb-title{
+	text-align: right;
+	}
 }
 
 
@@ -202,7 +228,7 @@ li{
   	@include section-three-title-mobile-p;
   	margin-top:	0%;
   	position: absolute;
-  	top: -0.7%;
+  	top: -1.3%;
   	@media (min-width: $breakpoint-tablet-port) {
 		width: 50vw;
 		right: 25vw;
@@ -216,7 +242,7 @@ li{
 
 .div-filter{
 	text-align: center;
-	margin-bottom: 25px;
+	margin-bottom: 2vmin;
 	@media (min-width: $breakpoint-tablet-port) {
 		text-align: left;
 		padding-left: 1%;
@@ -226,7 +252,7 @@ li{
 }
 
 .Button-Background {
-  width: 35%;
+  width: 40vmin;
   border-radius: 18px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), inset 0 2px 0 0 #ffffff;
   border: solid 1px #979797;
@@ -301,7 +327,7 @@ form{
 
 .flex-project {
 	min-height: 100vh;
-	@include height(167px, 8px);
+	@include height(260px, 8px, 8);
 	background-color: $dkpurple;
 	@media (min-width: $breakpoint-tablet-port) {
 		margin-top: 10%;
@@ -311,8 +337,8 @@ form{
 		justify-content: center;
 	}
 	div {
-		width: 50%;
-		height: 167px;
+		width: 250px;
+		height: 260px;
 		margin-left: auto;
 		margin-right: auto;
 		margin-bottom: 8px;
@@ -340,7 +366,7 @@ form{
 #footer{
 	background-color: $dkpurple;
 	position: relative;
-	height: 40vh;
+	height: 60vmin;
 	width: 100vw;
 }
 footer{
@@ -362,29 +388,25 @@ footer{
 .footer-title {
 	@include footer-title-mobile-p;
 	@include center-element;
-	padding-top: 15%;
-	margin-bottom: 5%;
+	padding-top: 20vmin;
+	margin-bottom: 5vmin;
 	@media (min-width: $breakpoint-tablet-port) {
-		padding-top: 10vh;
-		margin-bottom: 5vh;
+		padding-top: 10vmin;
+		margin-bottom: 5vmin;
 	}
 }
 
 .email {
-	width: 50%;
-	height: 25%;
+	width: 50vmin;
+	height: 10vmin;
 	border-radius: 38px;
 	box-shadow: 0 2px 4px 0 $black-50;
 	border: solid 1px $orange;
 	background-color: $orange;
 	@include email-btn-mobile-p;
-	@media (min-width: $breakpoint-tablet-port) {
-		width: 50vw;
-		height: 10vh;
-	}
 	@media (min-width: $breakpoint-tablet-land) {
-    	width: 30vw;
-		height: 10vh;
+    	width: 30vmin;
+		height: 10vmin;
   	}
 }
 
