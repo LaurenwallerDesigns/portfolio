@@ -33,11 +33,9 @@
 			@include title-blurb;
 			margin-bottom: 0%;
 			@if $width {
-				width: 70vmin;
-				padding-top: 10vmin;
+
 			} @else {
 				width: 50vmin;
-				padding-top: 12vmin;
 			}
 		}
 		ul {

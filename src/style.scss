@@ -116,12 +116,151 @@ p {
 
 
 .blurbs{
-	@include height(200px, 2px, 5);
+	@include height(160px, 2px, 5);
+	div:nth-child(-n + 1){
+		height: 150px;
+		.blurb-title {
+			padding-top: 6vmin;
+		}
+	}
+	div:nth-child(n + 2){
+		height: 160px;
+	}
+	div:nth-child(n + 4){
+		height: 190px;
+		.blurb-title {
+			padding-top: 8vmin;
+			width: 75vmin;
+		}
+	}
+	@media (min-width: 400px){
+			@include height(190px, 2px, 5);
+			div:nth-child(-n + 1){
+				height: 160px;
+			}
+			div:nth-child(n + 2){
+				height: 180px;
+			}
+			div:nth-child(n + 4){
+			height: 220px;
+		}
+	}
+	@media (min-width: 550px){
+			@include height(160px, 2px, 5);
+			div:nth-child(-n + 1){
+				height: 140px;
+			}
+			div:nth-child(n + 2){
+				height: 150px;
+			}
+			div:nth-child(n + 4){
+			height: 190px;
+		}
+	}
+	@media (min-width: 620px){
+			@include height(180px, 2px, 5);
+			div:nth-child(-n + 1){
+				height: 150px;
+			}
+			div:nth-child(n + 2){
+				height: 160px;
+			}
+			div:nth-child(n + 4){
+				height: 210px;
+			}
+	}
+	@media (min-width: 700px) 
+			and (max-height: 500px){
+			@include height(200px, 2px, 5);
+			div:nth-child(-n + 1){
+				height: 160px;
+			}
+			div:nth-child(n + 2){
+				height: 180px;
+			}
+			div:nth-child(n + 4){
+				height: 220px;
+			}
+	}
+	@media (min-width: 700px) 
+			and (min-height: 800px){
+			@include height(320px, 2px, 5);
+			div:nth-child(-n + 1){
+				height: 270px;
+			}
+			div:nth-child(n + 2){
+				height: 300px;
+			}
+			div:nth-child(n + 4){
+				height: 360px;
+			}
+	}
+	@media (min-width: 800px){
+			@include height(230px, 2px, 5);
+			div:nth-child(1){
+				height: 200px;
+				.blurb-title {
+					padding-top: 8vmin;
+				}
+			}
+			div:nth-child(2){
+				height: 220px;
+				.blurb-title {
+					padding-top: 8vmin;
+				}
+			}
+			div:nth-child(3){
+				height: 220px;
+				.blurb-title {
+					padding-top: 8vmin;
+				}
+			}
+			div:nth-child(n + 4){
+				height: 270px;
+				.blurb-title {
+					width: 80vmin;
+					padding-top: 10vmin;
+				}
+			}
+	}
+	@media (min-width: 1024px) 
+			and (min-height: 700px){
+			@include height(350px, 2px, 5);
+			div:nth-child(n + 1){
+				height: 350px;
+				.blurb-title {
+					padding-top: 6vmin;
+				}
+			}
+			div:nth-child(n + 4){
+				.blurb-title {
+					padding-top: 9vmin;
+					width: 80vmin;
+				}
+				height: 370px;
+			}
+	}
+	@media (min-width: 1024px) 
+			and (min-height: 1000px){
+			@include height(400px, 2px, 5);
+			div:nth-child(n + 1){
+				height: 390px;
+				.blurb-title {
+					padding-top: 6vmin;
+				}
+			}
+			div:nth-child(n + 4){
+				height: 400px;
+				.blurb-title {
+					padding-top: 8vmin;
+					width: 90vmin;
+					margin-left: 10px !important;
+				}
+			}
+		}
 }
 
-.blurb-container{
-	height: 200px;
-}
+
 
 #one {
 	@include transform(50%, 50%, 70%, 50%);
