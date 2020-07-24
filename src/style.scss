@@ -17,13 +17,6 @@ $breakpoint-tablet-land: 1024px;
 //Section One
 header{
 	height: 100vh;
-	max-height: 600px;
-	@media (min-width: $breakpoint-tablet-port) {
-		max-height: 800px;
-	} 
-	@media (min-width: $breakpoint-tablet-land) {
-		max-height: 1000px;
-	} 
 	text-align: center;
 	@include bottom-line;
 }
@@ -31,18 +24,12 @@ header{
 .headerDesign {
 	@include center-element;
 	width: 70vw;
-	height: 40vh;
-	border: 3px solid $orange;
+	height: auto;
+	border: 10px solid $orange;
 	border-top-style: none;
   	border-right-style: solid;
   	border-bottom-style: solid;
   	border-left-style: solid;
-  	@media (min-width: $breakpoint-tablet-port) {
-		height: 35%;
-	}
-	@media (min-width: $breakpoint-tablet-land) {
-		height: 55%;
-	}
 }
 
 .title {
@@ -113,170 +100,87 @@ p {
   @include p-mobile-p;
 }
 
+.left{
+	.div-blurb-text {
+		padding: 3%;
+	}
+	.blurb-title {
+		width: auto;
+		display: inline-block;
+	}
+	ul {
+		margin-top: 0px;
+		padding-left: 0px;
+		width: auto;
+		text-align: center;
+		li {
+			width: auto;
+			@include li-blurb-mobile-p;
+		}
+	}
+}
 
-
+.right{
+	.div-blurb-text {
+		margin-left: auto;
+		margin-right: 0px;
+		padding: 3%;
+	}
+	.blurb-title {
+		width: auto;
+		display: inline-block;
+	}
+	ul {
+		margin-top: 0px;
+		padding-left: 0px;
+		width: auto;
+		text-align: center;
+		li {
+			width: auto;
+			@include li-blurb-mobile-p;
+		}
+	}
+}
 .blurbs{
-	@include height(160px, 2px, 5);
-	div:nth-child(-n + 1){
-		height: 150px;
+	height: auto;
+	padding-bottom: 5%;
+	div:nth-child(-n + 1){ 
+		height: auto;
 		.blurb-title {
-			padding-top: 6vmin;
+			padding-top: 3vmin;
 		}
 	}
 	div:nth-child(n + 2){
-		height: 160px;
+		height: auto;
 	}
 	div:nth-child(n + 4){
-		height: 190px;
+		height: auto;
+		.blurb-title {
+			width: 50vmin;
+			padding-top: 5vmin;
+		}
+	}
+	div:nth-child(5){
 		.blurb-title {
 			padding-top: 8vmin;
-			width: 75vmin;
 		}
 	}
-	@media (min-width: 400px){
-			@include height(190px, 2px, 5);
-			div:nth-child(-n + 1){
-				height: 160px;
-			}
-			div:nth-child(n + 2){
-				height: 180px;
-			}
-			div:nth-child(n + 4){
-			height: 220px;
-		}
-	}
-	@media (min-width: 550px){
-			@include height(160px, 2px, 5);
-			div:nth-child(-n + 1){
-				height: 140px;
-			}
-			div:nth-child(n + 2){
-				height: 150px;
-			}
-			div:nth-child(n + 4){
-			height: 190px;
-		}
-	}
-	@media (min-width: 620px){
-			@include height(180px, 2px, 5);
-			div:nth-child(-n + 1){
-				height: 150px;
-			}
-			div:nth-child(n + 2){
-				height: 160px;
-			}
-			div:nth-child(n + 4){
-				height: 210px;
-			}
-	}
-	@media (min-width: 700px) 
-			and (max-height: 500px){
-			@include height(200px, 2px, 5);
-			div:nth-child(-n + 1){
-				height: 160px;
-			}
-			div:nth-child(n + 2){
-				height: 180px;
-			}
-			div:nth-child(n + 4){
-				height: 220px;
-			}
-	}
-	@media (min-width: 700px) 
-			and (min-height: 800px){
-			@include height(320px, 2px, 5);
-			div:nth-child(-n + 1){
-				height: 270px;
-			}
-			div:nth-child(n + 2){
-				height: 300px;
-			}
-			div:nth-child(n + 4){
-				height: 360px;
-			}
-	}
-	@media (min-width: 800px){
-			@include height(230px, 2px, 5);
-			div:nth-child(1){
-				height: 200px;
-				.blurb-title {
-					padding-top: 8vmin;
-				}
-			}
-			div:nth-child(2){
-				height: 220px;
-				.blurb-title {
-					padding-top: 8vmin;
-				}
-			}
-			div:nth-child(3){
-				height: 220px;
-				.blurb-title {
-					padding-top: 8vmin;
-				}
-			}
-			div:nth-child(n + 4){
-				height: 270px;
-				.blurb-title {
-					width: 80vmin;
-					padding-top: 10vmin;
-				}
-			}
-	}
-	@media (min-width: 1024px) 
-			and (min-height: 700px){
-			@include height(350px, 2px, 5);
-			div:nth-child(n + 1){
-				height: 350px;
-				.blurb-title {
-					padding-top: 6vmin;
-				}
-			}
-			div:nth-child(n + 4){
-				.blurb-title {
-					padding-top: 9vmin;
-					width: 80vmin;
-				}
-				height: 370px;
-			}
-	}
-	@media (min-width: 1024px) 
-			and (min-height: 1000px){
-			@include height(400px, 2px, 5);
-			div:nth-child(n + 1){
-				height: 390px;
-				.blurb-title {
-					padding-top: 6vmin;
-				}
-			}
-			div:nth-child(n + 4){
-				height: 400px;
-				.blurb-title {
-					padding-top: 8vmin;
-					width: 90vmin;
-					margin-left: 10px !important;
-				}
-			}
-		}
 }
 
 
 
 #one {
-	@include transform(50%, 50%, 70%, 50%);
+	@include transform(50%, 50%, 70%);
 	&:hover {
-		@include transform(100%, 50%, 30%, 50%);
+		@include transform(100%, 50%, 30%);
 	}
 	@media (min-width: $breakpoint-tablet-land) {
-		@include transform(50%, 40%, 70%, 40%);
+		@include transform(50%, 50%, 70%);
 		&:hover {
-			@include transform(100%, 40%, 30%, 40%);
+			@include transform(100%, 50%, 30%);
 		}
 	} 
 	@include blurb-sizing($left: false, $width: false);
-	.blurb-title{
-	text-align: right;
-	}
 }
 
 #two {
@@ -285,16 +189,13 @@ p {
 		@include transform(100%, 50%, 70%);
 	}
 	@media (min-width: $breakpoint-tablet-land) {
-		@include transform(55%, 45%, 30%, 45%);
+		@include transform(55%, 45%, 30%);
 		&:hover {
-			@include transform(100%, 45%, 70%, 45%);
+			@include transform(100%, 45%, 70%);
 		}
 	} 
 
 	@include blurb-sizing($left: true, $width: false);
-	.blurb-title{
-	text-align: left;
-	}
 }
 
 #three {
@@ -303,16 +204,13 @@ p {
 		@include transform(100%, 50%, 30%);
 	}
 	@media (min-width: $breakpoint-tablet-land) {
-		@include transform(55%, 45%, 70%, 45%);
+		@include transform(55%, 45%, 70%);
 		&:hover {
-			@include transform(100%, 45%, 30%, 45%);
+			@include transform(100%, 45%, 30%);
 		}
 	} 
 
 	@include blurb-sizing($left: false, $width: false);
-	.blurb-title{
-	text-align: right;
-	}
 }
 
 
@@ -322,9 +220,6 @@ p {
 		@include transform(100%, 50%, 70%);
 	}
 	@include blurb-sizing($left: true, $width: true);
-	.blurb-title{
-	text-align: left;
-	}
 }
 
 
@@ -334,11 +229,61 @@ p {
 		@include transform(100%, 50%, 30%);
 	}
 	@include blurb-sizing($left: false, $width: true);
-	.blurb-title{
-	text-align: right;
-	}
 }
 
+
+@media screen and (orientation: landscape) {
+	.right{
+		.div-blurb-text {
+			margin-left: auto;
+			margin-right: 28%;
+		}
+	}
+	.left{
+		.div-blurb-text {
+			margin-left: 15%;
+			margin-right: auto;
+		}
+	}
+
+	#one {
+		@include transform(20%, 50%, 60%);
+		&:hover {
+			@include transform(80%, 50%, 30%);
+		}
+	}
+
+	#two {
+		@include transform(25%, 50%, 30%);
+		&:hover {
+			@include transform(100%, 50%, 70%);
+		}
+	}
+
+	#three {
+		@include transform(20%, 50%, 60%);
+		&:hover {
+			@include transform(100%, 50%, 30%);
+		}
+	}
+
+
+	#four {
+		@include transform(25%, 50%, 30%);
+		&:hover {
+			@include transform(100%, 50%, 70%);
+		}
+	}
+
+
+	#five {
+		@include transform(25%, 50%, 60%);
+		&:hover {
+			@include transform(100%, 50%, 30%);
+		}
+	}
+	
+}
 
 
 
@@ -349,16 +294,11 @@ p {
 .work {
 	background: $dkpurple;
 	height: auto;
-	position: relative;
-	padding-top: 85px;
-	margin-top: 50px;
-	@media (min-width: $breakpoint-tablet-port) {
-		height: 250vh;
-		text-align: center;
-	}
-	@media (min-width: $breakpoint-tablet-land) {
-    	height: 250vh;
-  	}
+}
+
+.titlebtnContainer {
+	display: flex;
+	flex-direction: column;
 }
 
 .sectionthree-title {
@@ -366,28 +306,15 @@ p {
   	height: auto;
   	@include section-three-title-mobile-p;
   	margin-top:	0%;
-  	position: absolute;
-  	top: -1.3%;
+  	margin-bottom: 4%;
   	@media (min-width: $breakpoint-tablet-port) {
-		width: 50vw;
-		right: 25vw;
-		top: -1.3%;
 		@include center-element;
    	}
-   	@media (min-width: $breakpoint-tablet-land) {
-    	top: -30px;
-  	}
 }
 
 .div-filter{
 	text-align: center;
 	margin-bottom: 2vmin;
-	@media (min-width: $breakpoint-tablet-port) {
-		text-align: left;
-		padding-left: 1%;
-		position: absolute;
-		top: 1%;
-	}
 }
 
 .Button-Background {
@@ -400,11 +327,21 @@ p {
   margin-bottom: 15px;
   @include text-shadow-20;
   @media (min-width: $breakpoint-tablet-port) {
-		width: 20vw;
-  		height: 8vh;
+  		height: 8vmin;
 	}
 }
 
+
+.titlebtnContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#filter-menu {
+	width: 40vw;
+	z-index: 4;
+	position: absolute;
+}
 
 #filter-menu {
 	position:relative;
@@ -428,7 +365,7 @@ p {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	width: 100%;
+	width: 90vw;
 	margin-top: 5%;
 	padding-bottom: 5%;
 	.btn {
@@ -466,18 +403,22 @@ form{
 
 .flex-project {
 	min-height: 100vh;
-	@include height(260px, 8px, 8);
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	flex-wrap:no-wrap;
+	padding-bottom: 5%;
+	justify-content: center;
 	background-color: $dkpurple;
 	@media (min-width: $breakpoint-tablet-port) {
 		margin-top: 10%;
-		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		justify-content: center;
 	}
 	div {
-		width: 250px;
-		height: 260px;
+		width: 60vw;
+		min-height: 260px;
+		height: 40vh;
 		margin-left: auto;
 		margin-right: auto;
 		margin-bottom: 8px;
@@ -485,13 +426,9 @@ form{
 		border: solid 1px $lavender;
 		background-color: $dkpurple;
 		@media (min-width: $breakpoint-tablet-port) {
-			width: 33vw;
-			height: 45vh;
-			margin: 5%;
+			width: 40vw;
+			margin: 8px;
 		}
-		@media (min-width: $breakpoint-tablet-land) {
-	    	height: 45vh;
-	  	}
 	  	p {
 	  		text-align: center;
 	  		width: 10%;
@@ -499,6 +436,39 @@ form{
 	}
 }
 
+
+@media screen and (orientation: landscape) {
+	.titlebtnContainer {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+	#filter-menu {
+		width: 40vw;
+		z-index: 4;
+		position: absolute;
+	}
+
+	.buttons {
+		width: 40vw;
+	}
+
+	.flex-project {
+		min-height: 100vh;
+		height: auto;
+		display: flex;
+		flex-direction: row;
+		flex-wrap:wrap;
+		padding-bottom: 5%;
+		justify-content: center;
+		div {
+			width: 40%;
+			height: 260px;
+			margin: 8px;
+		}
+	}
+
+}
 
 
 //section four
@@ -516,9 +486,6 @@ footer{
 	background-size: cover;
 	width: 100%;
 	height: 100%;
-	@media (min-width: $breakpoint-tablet-port) {
-		height: 100%;
-	}
 }
 
 .wrapper {
@@ -529,10 +496,6 @@ footer{
 	@include center-element;
 	padding-top: 20vmin;
 	margin-bottom: 5vmin;
-	@media (min-width: $breakpoint-tablet-port) {
-		padding-top: 10vmin;
-		margin-bottom: 5vmin;
-	}
 }
 
 .email {
@@ -543,10 +506,6 @@ footer{
 	border: solid 1px $orange;
 	background-color: $orange;
 	@include email-btn-mobile-p;
-	@media (min-width: $breakpoint-tablet-land) {
-    	width: 30vmin;
-		height: 10vmin;
-  	}
 }
 
 

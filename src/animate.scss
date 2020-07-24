@@ -1,4 +1,9 @@
 @mixin transform($x, $y: 50%, $p: 50%, $p2: 50%) {
 	clip-path: ellipse($x $y at $p $p2);
 	transition: clip-path 1s;
+	.div-blurb-text{
+		width: $x;
+		text-align: center;
+		transition: width 1s;
+	}
 }

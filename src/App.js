@@ -227,7 +227,13 @@ class App extends React.Component {
 
 
   render () {
+    
+    
+    const one = document.getElementById('one');
+    console.log(one);
+    //document.documentElement.style.setProperty('--vh', `${vh}px`);
 
+    //console.log(vh);
     this.projects = this.state.projects.map((id, index) => {
       return <Prevprojects 
               id={id.id}

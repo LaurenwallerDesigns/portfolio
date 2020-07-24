@@ -16,6 +16,10 @@
  * limitations under the License.
  */
 
+
+ $fontsize: 3.5;
+ $titleBlurbFS:  6;
+
 @font-face {
   font-family: AlegreyaSans;
   src: local(AlegreyaSans-MediumItalic),
@@ -71,242 +75,6 @@
   font-stretch: normal;
 }
 
-//Desktop HD
-@mixin header-title-lg {
-  font-family: Jonah;
-  font-size: 150px;
-  letter-spacing: 3.79px;
-  text-align: center;
-  color: $dkpurple;
-}
-
-@mixin header-subtitle-lg {
-  font-family: Impact;
-  font-size: 100px;
-  letter-spacing: 3.13px;
-  text-align: center;
-  color: $dkpurple;
-}
-
-@mixin section-two-title-lg {
-  font-family: Impact;
-  font-size: 120px;
-  letter-spacing: 3.13px;
-  text-align: center;
-  color: $dkpurple;
-}
-
-@mixin section-two-subtitle-lg {
-  font-family: AlegreyaSans;
-  font-size: 68px;
-  font-weight: bold;
-  letter-spacing: 5.2px;
-  text-align: center;
-  color: $dkpurple;
-}
-
-@mixin section-two-blurb-lg {
-  font-family: AlegreyaSans;
-  font-size: 70px;
-  font-weight: bold;
-  letter-spacing: 3.13px;
-  text-align: center;
-  color: $dkpurple;
-}
-
-@mixin section-three-title-lg {
-  font-family: Impact;
-  font-size: 191px;
-  letter-spacing: 3.48px;
-  text-align: center;
-  color: $lavender;
-}
-
-@mixin filter-list-title-lg {
-  font-family: AlegreyaSans;
-  font-size: 42px;
-  font-weight: 500;
-  font-style: italic;
-  letter-spacing: 12.75px;
-  color: $dkpurple;
-}
-
-@mixin filter-header-title-lg {
-  font-family: AlegreyaSans;
-  font-size: 32px;
-  font-weight: 900;
-  letter-spacing: 5.32px;
-  text-align: center;
-  color: $dkpurple;
-}
-
-@mixin footer-title-lg {
-  font-family: Jonah;
-  font-size: 170px;
-  letter-spacing: 2.33px;
-  text-align: center;
-  color: $dkpurple;
-}
-
-
-
-
-
-//Desktop
-
-@mixin header-title-desktop {
-  font-family: Jonah;
-  font-size: 109px;
-  letter-spacing: 3.56px;
-  text-align: center;
-  color: $dkpurple;
-}
-
-@mixin header-subtitle-desktop {
-  font-family: Impact;
-  font-size: 60px;
-  letter-spacing: 3.13px;
-  text-align: center;
-  color: $dkpurple;
-}
-
-
-@mixin section-two-title-desktop {
-  font-family: Impact;
-  font-size: 86px;
-  letter-spacing: 3.85px;
-  text-align: center;
-  color: $dkpurple;
-}
-
-@mixin section-two-subtitle-desktop {
-  font-family: AlegreyaSans;
-  font-size: 45px;
-  font-weight: bold;
-  letter-spacing: 3.44px;
-  text-align: center;
-  color: $dkpurple;
-}
-
-@mixin section-three-title-desktop {
-  font-family: Impact;
-  font-size: 172px;
-  letter-spacing: 3.13px;
-  text-align: center;
-  color: $lavender;
-}
-
-@mixin footer-title-desktop {
-  font-family: Jonah;
-  font-size: 130px;
-  letter-spacing: 2.33px;
-  text-align: center;
-  color: $dkpurple;
-}
-
-
-
-//Mobile Landscape
-
-@mixin header-subtitle-mobile-land {
-  font-family: Impact;
-  font-size: 49px;
-  letter-spacing: 3.13px;
-  text-align: center;
-  color: $dkpurple;
-}
-
-@mixin section-two-title-mobile-land {
-  font-family: Impact;
-  font-size: 52px;
-  letter-spacing: 5.43px;
-  text-align: center;
-  color: $dkpurple;
-}
-
-@mixin section-two-subtitle-mobile-land {
-  font-family: AlegreyaSans;
-  font-size: 31px;
-  font-weight: bold;
-  letter-spacing: 4.63px;
-  text-align: center;
-  color: $dkpurple;
-}
-
-@mixin section-two-blurb-mobile-land {
-  font-family: AlegreyaSans;
-  font-size: 30px;
-  font-weight: bold;
-  letter-spacing: 4.48px;
-  text-align: center;
-  color: $dkpurple;
-}
-
-@mixin section-three-title-mobile-land {
-  font-family: Impact;
-  font-size: 130px;
-  letter-spacing: 6.37px;
-  text-align: center;
-  color: $lavender;
-}
-
-@mixin footer-title-mobile-land {
-  font-family: Jonah;
-  font-size: 130px;
-  letter-spacing: 4.39px;
-  text-align: center;
-  color: $dkpurple;
-}
-
-
-
-
-
-//Tablet Portrait
-
-@mixin header-title-tab-p {
-  font-family: Jonah;
-  font-size: 88px;
-  letter-spacing: 3.13px;
-  text-align: center;
-  color: $dkpurple;
-}
-
-@mixin section-two-subtitle-tab-p {
-  font-family: AlegreyaSans;
-  font-size: 41px;
-  font-weight: bold;
-  letter-spacing: 3.13px;
-  text-align: center;
-  color: $dkpurple;
-}
-
-@mixin section-two-blurb-tab-p {
-  font-family: AlegreyaSans;
-  font-size: 32px;
-  font-weight: bold;
-  letter-spacing: 3.13px;
-  text-align: center;
-  color: $dkpurple;
-}
-
-@mixin section-three-title-tab-p {
-  font-family: Impact;
-  font-size: 125px;
-  letter-spacing: 3.13px;
-  text-align: center;
-  color: $lavender;
-}
-
-@mixin footer-title-tab-p {
-  font-family: Jonah;
-  font-size: 94px;
-  letter-spacing: 2.33px;
-  text-align: center;
-  color: $dkpurple;
-}
-
-
 
 
 // Mobile Portrait
@@ -326,7 +94,6 @@
   @include center-element;
   @media (min-width: $breakpoint-tablet-port) {
     width: 80%;
-    font-size: 12.75vh;
   }
 }
 
@@ -383,9 +150,6 @@
   letter-spacing: 5px;
   text-align: center;
   color: $dkpurple;
-  @media (min-width: $breakpoint-tablet-land) {
-    font-size: 2em;
-  }
 }
 
 
@@ -410,10 +174,9 @@
 
 @mixin title-blurb {
   font-family: AlegreyaSans;
-  font-size:  7vmin;
+  font-size: 6vmin;
   margin-top: 0px;
   padding-bottom: 0px;
-  @include center-element;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -421,34 +184,22 @@
   letter-spacing: 3.13px;
   color: $dkpurple;
   @include text-shadow-20;
-  @media (min-width: $breakpoint-tablet-port) {
-    letter-spacing: 6.93px;
-  }
   @media (min-width: $breakpoint-tablet-land) {
     font-size: 5vmin;
   }
 }
 
-@mixin li-blurb-mobile-p($vmin) {
+@mixin li-blurb-mobile-p {
   font-family: AlegreyaSans;
-  font-size: 4vmin;
+  font-size: 3.5vmin;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: 3.13px;
-  text-align: left;
   color: $dkpurple;
-  width: $vmin;
   list-style: none;
   @include text-shadow-20;
-  @include center-element;
-  @media (min-width: $breakpoint-tablet-port) {
-    font-size: 1.45em;
-  }
-  @media (min-width: $breakpoint-tablet-land) {
-    font-size: 2em;
-  }
 }
 
 
@@ -463,12 +214,6 @@
   letter-spacing: 3.13px;
   text-align: center;
   color: $lavender;
-  @media (min-width: $breakpoint-tablet-port) {
-    font-size: 6em;
-  }
-  @media (min-width: $breakpoint-tablet-land) {
-    font-size: 8em;
-  }
 }
 
 @mixin email-btn-mobile-p {
@@ -482,9 +227,6 @@
   letter-spacing: 3.92px;
   text-align: center;
   color: $lavender;
-  @media (min-width: $breakpoint-tablet-port) {
-    font-size: 2em;
-  }
 }
 
 @mixin footer-title-mobile-p {
@@ -499,9 +241,6 @@
   letter-spacing: 2.33px;
   text-align: center;
   color: $dkpurple;
-  @media (min-width: $breakpoint-tablet-port) {
-    font-size: 4em;
-  }
 }
 
 

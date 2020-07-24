@@ -24,28 +24,15 @@
 }
 
 @mixin blurb-sizing($left: false, $width: false) {
-	width:100%;
+	width:auto;
 	position: relative;
 	background-color: $orange;
 	.div-blurb-text {
 		z-index: 3;
+		padding: 3vh;
 		.blurb-title {
 			@include title-blurb;
 			margin-bottom: 0%;
-			@if $width {
-
-			} @else {
-				width: 50vmin;
-			}
-		}
-		ul {
-			width: 100%;
-			padding-left: 0%;
-			@if $left {
-				@include li-blurb-mobile-p(50vmin);
-			} @else {
-				@include li-blurb-mobile-p(10vmin);
-			}
 		}
 	}
 }

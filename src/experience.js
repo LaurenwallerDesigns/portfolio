@@ -16,22 +16,27 @@ class Qual extends React.Component {
 	render () {
 		return (
 			<section id="experience">
-				<h2 className="section-title"> Qualifications </h2>
+				<h2 className="section-title"> Experience </h2>
 					<p className="section-subtitle">
-						5 years experience
+						5+ years
 						<br />
 					</p>
 					<div className="blurbs">
 						<Blurbs
-							id="one" />
+							id="one"
+							className="right blurb-container" />
 						<Blurbs
-							id="two" />
+							id="two"
+							className="left blurb-container" />
 						<Blurbs
-							id="three" />
+							id="three"
+							className="right blurb-container" />
 						<Blurbs
-							id="four" />
+							id="four"
+							className="left blurb-container" />
 						<Blurbs
-							id="five" />
+							id="five"
+							className="right blurb-container" />
 					</div>
 
 			</section>
