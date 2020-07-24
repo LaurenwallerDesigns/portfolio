@@ -95,7 +95,7 @@ class App extends React.Component {
   }
 
   insertText() {
-    const blurbs = document.querySelectorAll(".blurbs div");
+    const blurbs = document.querySelectorAll(".blurbs .blurb-container");
     blurbs.forEach( b => {
       const div = document.createElement("div");
       div.setAttribute("class", "div-blurb-text");

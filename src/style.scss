@@ -1,6 +1,6 @@
 @import 'colors', 'fonts', 'mixins', 'textBlurbs', 'animate';
-$breakpoint-tablet-port: 768px;
-$breakpoint-tablet-land: 1024px;
+$breakpoint-tablet-port: 48em;
+$breakpoint-tablet-land: 64em;
 
 //background
 * {
@@ -36,23 +36,11 @@ header{
 	margin-top: 0px;
 	padding-top: 10vmin;
 	@include title-mobile-p;
-	@media (min-width: $breakpoint-tablet-port) {
-		padding-top: 3%;
-	}
-	@media (min-width: $breakpoint-tablet-land) {
-		padding-top: 8%;
-	}
 }
 
 .subtitle-text {
 	margin-top: 25vmin;
 	@include header-subtitle-mobile-p;
-	@media (min-width: $breakpoint-tablet-port) {
-		margin-top: 20%;
-	}
-	@media (min-width: $breakpoint-tablet-land) {
-		margin-top: 10%;
-	}
 }
 
 //arrows
@@ -64,22 +52,11 @@ header{
 	width: 10vw;
 	height: 20vh;
 	z-index: 4;
-	@media (min-width: $breakpoint-tablet-land) {
-		width: 10vw;
-	}
 }
 
 .arrow {
   	width: 100%;
   	height: 50%;
-  	@media (min-width: $breakpoint-tablet-port) {
-		width: 80%;
-		height: 60%;
-	}
-	@media (min-width: $breakpoint-tablet-land) {
-		width: 100%;
-		height: 80%;
-	}
 }
 
 .hide {
@@ -144,23 +121,61 @@ p {
 .blurbs{
 	height: auto;
 	padding-bottom: 5%;
-	div:nth-child(-n + 1){ 
+	.container{
+		background-color: $dkpurple;
+	}
+	.container:nth-child(1){
+		@include transform(50%, 50%, 70%);
+		transition: padding 1s;
+		&:hover {
+			padding: 0px 0px 10px 10px;
+		}
+	}
+	.container:nth-child(2){
+		@include transform(50%, 50%, 30%);
+		transition: padding 1s;
+		&:hover {
+			padding: 0px 10px 10px 0px;
+		}
+	}
+	.container:nth-child(3){
+		@include transform(50%, 50%, 70%);
+		transition: padding 1s;
+		&:hover {
+			padding: 0px 0px 10px 10px;
+		}
+	}
+	.container:nth-child(4){
+		@include transform(60%, 50%, 30%);
+		transition: padding 1s;
+		&:hover {
+			padding: 0px 10px 10px 0px;
+		}
+	}
+	.container:nth-child(5){
+		@include transform(60%, 50%, 70%);
+		transition: padding 1s;
+		&:hover {
+			padding: 0px 10px 10px 10px;
+		}
+	}
+	.blurb-container:nth-child(-n + 1){ 
 		height: auto;
 		.blurb-title {
 			padding-top: 3vmin;
 		}
 	}
-	div:nth-child(n + 2){
+	.blurb-container:nth-child(n + 2){
 		height: auto;
 	}
-	div:nth-child(n + 4){
+	.blurb-container:nth-child(n + 4){
 		height: auto;
 		.blurb-title {
 			width: 50vmin;
 			padding-top: 5vmin;
 		}
 	}
-	div:nth-child(5){
+	.blurb-container:nth-child(5){
 		.blurb-title {
 			padding-top: 8vmin;
 		}
@@ -171,119 +186,31 @@ p {
 
 #one {
 	@include transform(50%, 50%, 70%);
-	&:hover {
-		@include transform(100%, 50%, 30%);
-	}
-	@media (min-width: $breakpoint-tablet-land) {
-		@include transform(50%, 50%, 70%);
-		&:hover {
-			@include transform(100%, 50%, 30%);
-		}
-	} 
 	@include blurb-sizing($left: false, $width: false);
 }
 
 #two {
 	@include transform(50%, 50%, 30%);
-	&:hover {
-		@include transform(100%, 50%, 70%);
-	}
-	@media (min-width: $breakpoint-tablet-land) {
-		@include transform(55%, 45%, 30%);
-		&:hover {
-			@include transform(100%, 45%, 70%);
-		}
-	} 
-
 	@include blurb-sizing($left: true, $width: false);
 }
 
 #three {
 	@include transform(50%, 50%, 70%);
-	&:hover {
-		@include transform(100%, 50%, 30%);
-	}
-	@media (min-width: $breakpoint-tablet-land) {
-		@include transform(55%, 45%, 70%);
-		&:hover {
-			@include transform(100%, 45%, 30%);
-		}
-	} 
-
 	@include blurb-sizing($left: false, $width: false);
 }
 
 
 #four {
 	@include transform(60%, 50%, 30%);
-	&:hover {
-		@include transform(100%, 50%, 70%);
-	}
 	@include blurb-sizing($left: true, $width: true);
 }
 
 
 #five {
 	@include transform(60%, 50%, 70%);
-	&:hover {
-		@include transform(100%, 50%, 30%);
-	}
 	@include blurb-sizing($left: false, $width: true);
 }
 
-
-@media screen and (orientation: landscape) {
-	.right{
-		.div-blurb-text {
-			margin-left: auto;
-			margin-right: 28%;
-		}
-	}
-	.left{
-		.div-blurb-text {
-			margin-left: 15%;
-			margin-right: auto;
-		}
-	}
-
-	#one {
-		@include transform(20%, 50%, 60%);
-		&:hover {
-			@include transform(80%, 50%, 30%);
-		}
-	}
-
-	#two {
-		@include transform(25%, 50%, 30%);
-		&:hover {
-			@include transform(100%, 50%, 70%);
-		}
-	}
-
-	#three {
-		@include transform(20%, 50%, 60%);
-		&:hover {
-			@include transform(100%, 50%, 30%);
-		}
-	}
-
-
-	#four {
-		@include transform(25%, 50%, 30%);
-		&:hover {
-			@include transform(100%, 50%, 70%);
-		}
-	}
-
-
-	#five {
-		@include transform(25%, 50%, 60%);
-		&:hover {
-			@include transform(100%, 50%, 30%);
-		}
-	}
-	
-}
 
 
 
@@ -307,9 +234,6 @@ p {
   	@include section-three-title-mobile-p;
   	margin-top:	0%;
   	margin-bottom: 4%;
-  	@media (min-width: $breakpoint-tablet-port) {
-		@include center-element;
-   	}
 }
 
 .div-filter{
@@ -326,9 +250,6 @@ p {
   @include filter-mobile-p;
   margin-bottom: 15px;
   @include text-shadow-20;
-  @media (min-width: $breakpoint-tablet-port) {
-  		height: 8vmin;
-	}
 }
 
 
@@ -410,11 +331,7 @@ form{
 	padding-bottom: 5%;
 	justify-content: center;
 	background-color: $dkpurple;
-	@media (min-width: $breakpoint-tablet-port) {
-		margin-top: 10%;
-		flex-direction: row;
-		flex-wrap: wrap;
-	}
+
 	div {
 		width: 60vw;
 		min-height: 260px;
@@ -425,10 +342,6 @@ form{
 		box-shadow: 0 2px 4px 0 $black-50;
 		border: solid 1px $lavender;
 		background-color: $dkpurple;
-		@media (min-width: $breakpoint-tablet-port) {
-			width: 40vw;
-			margin: 8px;
-		}
 	  	p {
 	  		text-align: center;
 	  		width: 10%;
@@ -436,39 +349,6 @@ form{
 	}
 }
 
-
-@media screen and (orientation: landscape) {
-	.titlebtnContainer {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-	}
-	#filter-menu {
-		width: 40vw;
-		z-index: 4;
-		position: absolute;
-	}
-
-	.buttons {
-		width: 40vw;
-	}
-
-	.flex-project {
-		min-height: 100vh;
-		height: auto;
-		display: flex;
-		flex-direction: row;
-		flex-wrap:wrap;
-		padding-bottom: 5%;
-		justify-content: center;
-		div {
-			width: 40%;
-			height: 260px;
-			margin: 8px;
-		}
-	}
-
-}
 
 
 //section four
@@ -509,4 +389,143 @@ footer{
 }
 
 
+
+//MEDIA QUERIES
+@media screen and (orientation: landscape) {
+	.right{
+		.div-blurb-text {
+			margin-left: auto;
+			margin-right: 28%;
+		}
+	}
+	.left{
+		.div-blurb-text {
+			margin-left: 15%;
+			margin-right: auto;
+		}
+	}
+
+	#one {
+		@include transform(20%, 50%, 60%);
+		&:hover {
+			@include transform(80%, 50%, 30%);
+		}
+	}
+
+	#two {
+		@include transform(25%, 50%, 30%);
+		&:hover {
+			@include transform(100%, 50%, 70%);
+		}
+	}
+
+	#three {
+		@include transform(20%, 50%, 60%);
+		&:hover {
+			@include transform(100%, 50%, 30%);
+		}
+	}
+
+
+	#four {
+		@include transform(25%, 50%, 30%);
+		&:hover {
+			@include transform(100%, 50%, 70%);
+		}
+	}
+
+
+	#five {
+		@include transform(25%, 50%, 60%);
+		&:hover {
+			@include transform(100%, 50%, 30%);
+		}
+	}
+	.titlebtnContainer {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.sectionthree-title {
+		flex-grow: 2;
+	}
+
+	#filter-menu {
+		width: 40vw;
+		z-index: 4;
+		position: absolute;
+	}
+	.div-filter{
+		width: 25vw;
+	}
+	.Button-Background{
+		width: 20vw;
+		margin-right: 2vw;
+	}
+
+	.buttons {
+		width: 40vw;
+	}
+
+	.flex-project {
+		min-height: 100vh;
+		height: auto;
+		display: flex;
+		flex-direction: row;
+		flex-wrap:wrap;
+		padding-bottom: 5%;
+		justify-content: center;
+		margin-top: 2%;
+		div {
+			width: 40%;
+			height: 44vh;
+		}
+	}
+	
+}
+
+@media (min-width: $breakpoint-tablet-port) {
+	.title {
+		padding-top: 3%;
+	}
+	.subtitle-text{
+		margin-top: 20%;
+	}
+	.arrow{
+		width: 80%;
+		height: 60%;
+	}
+	.sectionthree-title{
+		@include center-element;
+	}
+	.Button-Background{
+		height: 8vmin;
+	}
+	.flex-project{
+		flex-direction: row;
+		flex-wrap: wrap;
+		div {
+			width: 40vw;
+			margin: 15px;
+		}
+	}
+}
+
+
+@media (min-width: $breakpoint-tablet-land) {
+	.title {
+		padding-top: 8%;
+	}
+	.subtitle-text {
+		margin-top: 10%;
+	}
+	.arrows {
+		width: 10vw;
+	}
+	.arrow {
+		width: 100%;
+		height: 80%;
+	}
+}
 
