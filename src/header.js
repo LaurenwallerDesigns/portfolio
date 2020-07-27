@@ -2,10 +2,13 @@ import React from 'react';
 
 class Header extends React.Component {
 	render () {
+		console.log(this.props.height);
 		return (
 			<header id="header">
-				<div className="headerDesign">
-					<h1 className="title"> Lauren Hamann </h1>
+				<div className="border">
+					<div className="headerDesign">
+						<h1 className="title"> Lauren Hamann </h1>
+					</div>
 				</div>
 
 				<div className="subtitle">

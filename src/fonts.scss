@@ -106,8 +106,9 @@
   font-style: normal;
   line-height: normal;
   letter-spacing: 3.13px;
-  text-align: center;
+  @include center-element;
   color: $dkpurple;
+  width: $borderWidth;
   span {
     font-size: 7vmin;
   }
@@ -124,6 +125,7 @@
   font-size: 12vmin;
   letter-spacing: 4.93px;
   text-align: center;
+  width: $borderWidth;
   color: $dkpurple;
   @include text-shadow-20;
   @media (min-width: $breakpoint-tablet-port) {
@@ -140,7 +142,6 @@
 
 
 @mixin filter-mobile-p{
-  text-shadow: 0 1px 0 #ffffff;
   font-family: AlegreyaSans;
   font-size: 3vmin;
   font-weight: bold;
@@ -162,8 +163,8 @@
   line-height: normal;
   letter-spacing: 3.13px;
   text-align: center;
+  width: $borderWidth;
   color: $dkpurple;
-  @include text-shadow-20;
   @media (min-width: $breakpoint-tablet-port) {
     letter-spacing: 6.93px;
   }
@@ -183,7 +184,7 @@
   line-height: normal;
   letter-spacing: 3.13px;
   color: $dkpurple;
-  @include text-shadow-20;
+  text-shadow: 1px 1px 0px $black-20;
   @media (min-width: $breakpoint-tablet-land) {
     font-size: 5vmin;
   }
@@ -197,9 +198,8 @@
   font-style: normal;
   line-height: normal;
   letter-spacing: 3.13px;
-  color: $dkpurple;
+  color: $black-20;
   list-style: none;
-  @include text-shadow-20;
 }
 
 
@@ -213,11 +213,11 @@
   line-height: normal;
   letter-spacing: 3.13px;
   text-align: center;
-  color: $lavender;
+  color: $dkpurple;
 }
 
 @mixin email-btn-mobile-p {
-  @include text-shadow-50;
+  text-shadow: 2px 1px 0px $black-50;
   font-family: Impact;
   font-size: 5vmin;
   font-weight: normal;
@@ -226,11 +226,11 @@
   line-height: normal;
   letter-spacing: 3.92px;
   text-align: center;
-  color: $lavender;
+  color: $dkpurple;
 }
 
 @mixin footer-title-mobile-p {
-  text-shadow: 0 5px 7px $black-50;
+  text-shadow: 2px 0px 0px $black-50;
   font-family: Jonah;
   font-size: 10vmin;
   margin-top: 0px;

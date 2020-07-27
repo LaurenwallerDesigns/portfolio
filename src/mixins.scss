@@ -12,15 +12,15 @@
 }
 
 @mixin text-shadow-20 {
-	text-shadow: 0 4px 7px $black-20;
+	text-shadow: 4px 1px 0px $black-20;
 }
 
 @mixin text-shadow-50 {
-	text-shadow: 0 4px 7px $black-50;
+	text-shadow: 2px 4px 0px $black-50;
 }
 
 @mixin text-shadow-below {
-	text-shadow: -2px 8px 7px $black-50;
+	text-shadow: -2px 8px 0px $black-50;
 }
 
 @mixin blurb-sizing($left: false, $width: false) {
@@ -40,4 +40,20 @@
 
 @mixin height($height, $margin, $elNum){
 	height: (($height + $margin) * $elNum) + 40;
+}
+
+
+@mixin changeDirection($row: true){
+	@if $row {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+	} @else {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
 }

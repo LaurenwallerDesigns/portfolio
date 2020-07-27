@@ -59,6 +59,7 @@ class App extends React.Component {
     this.filterProjects();
     document.getElementById('upArrow').classList.add('hide');
     window.addEventListener('scroll', this.scrollTop);
+    window.addEventListener("scroll", this.drawSvg);
   }
 
   componentWillUnmount() {
@@ -92,6 +93,71 @@ class App extends React.Component {
           downArrow.classList.remove('hide');
     }
     return position;
+  }
+
+  drawSvg() {
+    var scrollpercent = (document.body.scrollTop + document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+    var line = document.getElementById("line");
+    var length = line.getTotalLength();
+      line.style.strokeDasharray = length;
+      line.style.strokeDashoffset = length;
+    var draw = length * scrollpercent;
+
+    console.log(scrollpercent);
+
+    // Reverse the drawing (when scrolling upwards)
+    line.style.strokeDashoffset = length - draw;
+    var lineTwo = document.getElementById("line-two");
+    var length = lineTwo.getTotalLength();
+      lineTwo.style.strokeDasharray = length;
+      lineTwo.style.strokeDashoffset = length;
+    var draw = length * scrollpercent;
+
+    // Reverse the drawing (when scrolling upwards)
+    lineTwo.style.strokeDashoffset = length - draw;
+
+    if(scrollpercent > 0.98){
+      const footer = document.querySelector('footer');
+      footer.classList.add('draw');
+    }else {
+      const footer = document.querySelector('footer');
+      footer.classList.remove('draw');
+    }
+    if(scrollpercent < 0.23 & scrollpercent > 0.18){
+      const blurbOne = document.querySelector('.blurbs .container:nth-child(1)');
+      blurbOne.classList.add('drawNow');
+    }else {
+      const blurbOne = document.querySelector('.blurbs .container:nth-child(1)');
+      blurbOne.classList.remove('drawNow');
+    }
+    if(scrollpercent < 0.27 & scrollpercent > 0.23){
+      const blurbTwo = document.querySelector('.blurbs .container:nth-child(2)');
+      blurbTwo.classList.add('drawNow');
+    }else {
+      const blurbTwo = document.querySelector('.blurbs .container:nth-child(2)');
+      blurbTwo.classList.remove('drawNow');
+    }
+    if(scrollpercent < 0.30 & scrollpercent > 0.27){
+      const blurbThree = document.querySelector('.blurbs .container:nth-child(3)');
+      blurbThree.classList.add('drawNow');
+    }else {
+      const blurbThree = document.querySelector('.blurbs .container:nth-child(3)');
+      blurbThree.classList.remove('drawNow');
+    }
+    if(scrollpercent < 0.34 & scrollpercent > 0.30){
+      const blurbFour = document.querySelector('.blurbs .container:nth-child(4)');
+      blurbFour.classList.add('drawNow');
+    }else {
+      const blurbFour = document.querySelector('.blurbs .container:nth-child(4)');
+      blurbFour.classList.remove('drawNow');
+    }
+    if(scrollpercent < 0.40 & scrollpercent > 0.34){
+      const blurbFive = document.querySelector('.blurbs .container:nth-child(5)');
+      blurbFive.classList.add('drawNow');
+    }else {
+      const blurbFive = document.querySelector('.blurbs .container:nth-child(5)');
+      blurbFive.classList.remove('drawNow');
+    }
   }
 
   insertText() {
@@ -138,6 +204,8 @@ class App extends React.Component {
     filterMenu.classList.toggle('hide');
     const filterBtn = document.getElementById('filterBtn');
     filterBtn.classList.toggle('hide');
+    const title = document.getElementById('titlebtnContainer');
+    title.classList.toggle('titlebtnContainer-hide');
   }
 
   selectAllCheckboxes = isSelected => {
@@ -181,12 +249,10 @@ class App extends React.Component {
   filterProjects(array) {
     const filteredProjects = [];
     if(array === undefined || array.length < 1) {
-      console.log('the if');
       this.setState({
         projects: projects
       });
     }else {
-      console.log('the else');
       for(let project = 0; project < projects.length; project++) {
           const classes = projects[project].classes;
           classes.forEach((c) => array.forEach((s) => {
@@ -206,7 +272,6 @@ class App extends React.Component {
         return filteredProjects.indexOf(item) === index
       });
 
-      console.log(result);
       this.setState({
         projects: result
       });
@@ -227,10 +292,6 @@ class App extends React.Component {
 
 
   render () {
-    
-    
-    const one = document.getElementById('one');
-    console.log(one);
     //document.documentElement.style.setProperty('--vh', `${vh}px`);
 
     //console.log(vh);
@@ -242,22 +303,41 @@ class App extends React.Component {
               />
     });
 
+    const windowWidth = window.innerWidth;
+
+    const start = windowWidth * 0.2;
+    const startTwo = windowWidth * 0.8;
+
     return (
       <React.Fragment>
-      <Header />
-      <Arrows
-        href={this.state.section}
-        onClick= {this.arrowClick} />
-      <Experience />
-      <Work 
-        onclick={this.filterBtn}
-        handleFilter={this.createCheckboxes()}
-        handleFormSubmit={this.handleFormSubmit}
-        selectAll={this.selectAll}
-        deselectAll={this.deselectAll}
-        filteredProjects={this.projects}
+      <div className="svg-container">
+        <div className="svg-item">
+          <svg id="mySVG" version="1.1" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 659 522" enable-background="new 0 0 659 522" preserveAspectRatio="none">
+            <path class="path" width="100%" height="100%" fill="none" stroke="#28AFB0" stroke-width="5" stroke-miterlimit="10" id="line" d="M2.5 2.5v517" stroke-dasharray="2042 300" stroke-dashoffset="2342"/>
+          </svg>
+        </div>
+        <div className="svg-item">
+          <svg id="mySVGTwo" version="1.1" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 659 522" enable-background="new 0 0 659 522" preserveAspectRatio="none">
+
+            <path id="line-two" class="path" width="100%" height="100%" fill="none" stroke="#28AFB0" stroke-width="5" stroke-miterlimit="10" d="M656.5,2.5v517" stroke-dasharray="2042 300" stroke-dashoffset="2342" />
+          </svg>
+        </div>
+      </div>
+        <Header 
         />
-      <Footer />
+        <Arrows
+          href={this.state.section}
+          onClick= {this.arrowClick} />
+        <Experience />
+        <Work 
+          onclick={this.filterBtn}
+          handleFilter={this.createCheckboxes()}
+          handleFormSubmit={this.handleFormSubmit}
+          selectAll={this.selectAll}
+          deselectAll={this.deselectAll}
+          filteredProjects={this.projects}
+          />
+        <Footer />
       </React.Fragment>
     );
   }

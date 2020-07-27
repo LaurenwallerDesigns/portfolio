@@ -9,7 +9,7 @@ class Work extends React.Component {
 	render () {
 		return (
 			<section className="work section" id="work">
-				<div className="titlebtnContainer">
+				<div id="titlebtnContainer" className="titlebtnContainer">
 					<h2 className="sectionthree-title">
 						My Work
 					</h2>

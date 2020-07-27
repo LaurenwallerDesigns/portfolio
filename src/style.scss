@@ -1,18 +1,39 @@
 @import 'colors', 'fonts', 'mixins', 'textBlurbs', 'animate';
 $breakpoint-tablet-port: 48em;
 $breakpoint-tablet-land: 64em;
+$borderWidth: 80vw;
+$widthContent: 75vw;
+$screenWidth: 100vw;
 
 //background
 * {
 	scroll-behavior: smooth;
-	width: 100vw;
-
+	width: $screenWidth;
 }
 
-#root{
+
+#root {
 	background: $lavender;
 	overflow-x: hidden;
 }
+
+.svg-container{
+	display: flex;
+	flex-direction: row;
+}
+
+.svg-item{
+	width: 50vw;
+}
+
+#mySVG,
+#mySVGTwo{
+display: block;
+	position:fixed;
+	width: 50vw;
+}
+
+
 
 //Section One
 header{
@@ -21,10 +42,22 @@ header{
 	@include bottom-line;
 }
 
+.border{
+	@include center-element;
+	width: 84vw;
+	height: auto;
+	border: 10px solid $blueAccent;
+	border-top-style: none;
+  	border-right-style: solid;
+  	border-bottom-style: solid;
+  	border-left-style: solid;
+}
+
 .headerDesign {
 	@include center-element;
-	width: 70vw;
+	width: $borderWidth;
 	height: auto;
+	z-index: 999;
 	border: 10px solid $orange;
 	border-top-style: none;
   	border-right-style: solid;
@@ -36,11 +69,14 @@ header{
 	margin-top: 0px;
 	padding-top: 10vmin;
 	@include title-mobile-p;
+	background-color: $lavender;
+	z-index: 4;
 }
 
 .subtitle-text {
 	margin-top: 25vmin;
 	@include header-subtitle-mobile-p;
+	z-index: 4;
 }
 
 //arrows
@@ -66,6 +102,8 @@ header{
 
 #experience {
 	height: auto;
+	width: $borderWidth;
+	@include center-element;
 }
 .section-title{
 	@include section-two-header-mobile-p;
@@ -73,91 +111,45 @@ header{
 }
 
 
-p {
+.section-subtitle {
   @include p-mobile-p;
 }
 
-.left{
-	.div-blurb-text {
-		padding: 3%;
-	}
-	.blurb-title {
-		width: auto;
-		display: inline-block;
-	}
-	ul {
-		margin-top: 0px;
-		padding-left: 0px;
-		width: auto;
-		text-align: center;
-		li {
-			width: auto;
-			@include li-blurb-mobile-p;
-		}
-	}
-}
-
-.right{
-	.div-blurb-text {
-		margin-left: auto;
-		margin-right: 0px;
-		padding: 3%;
-	}
-	.blurb-title {
-		width: auto;
-		display: inline-block;
-	}
-	ul {
-		margin-top: 0px;
-		padding-left: 0px;
-		width: auto;
-		text-align: center;
-		li {
-			width: auto;
-			@include li-blurb-mobile-p;
-		}
-	}
-}
 .blurbs{
 	height: auto;
+	width: $borderWidth;
+	@include center-element;
 	padding-bottom: 5%;
 	.container{
-		background-color: $dkpurple;
+		width: $borderWidth;
+		background-color: $blueAccent;
+		@include center-element;
+		margin-top: 3%;
+
 	}
 	.container:nth-child(1){
-		@include transform(50%, 50%, 70%);
+		@include transform();
 		transition: padding 1s;
-		&:hover {
-			padding: 0px 0px 10px 10px;
-		}
 	}
 	.container:nth-child(2){
-		@include transform(50%, 50%, 30%);
+		@include transform();
 		transition: padding 1s;
-		&:hover {
-			padding: 0px 10px 10px 0px;
-		}
 	}
 	.container:nth-child(3){
-		@include transform(50%, 50%, 70%);
+		@include transform();
 		transition: padding 1s;
-		&:hover {
-			padding: 0px 0px 10px 10px;
-		}
 	}
 	.container:nth-child(4){
-		@include transform(60%, 50%, 30%);
+		@include transform();
 		transition: padding 1s;
-		&:hover {
-			padding: 0px 10px 10px 0px;
-		}
 	}
 	.container:nth-child(5){
-		@include transform(60%, 50%, 70%);
+		@include transform();
 		transition: padding 1s;
-		&:hover {
-			padding: 0px 10px 10px 10px;
-		}
+	}
+
+	.drawNow{
+		padding: 10px;
 	}
 	.blurb-container:nth-child(-n + 1){ 
 		height: auto;
@@ -185,33 +177,46 @@ p {
 
 
 #one {
-	@include transform(50%, 50%, 70%);
+	@include transform();
 	@include blurb-sizing($left: false, $width: false);
+	.blurb-title {
+		text-align: center;
+	}
 }
 
 #two {
-	@include transform(50%, 50%, 30%);
+	@include transform();
 	@include blurb-sizing($left: true, $width: false);
+	.blurb-title {
+		text-align: center;
+	}
 }
 
 #three {
-	@include transform(50%, 50%, 70%);
+	@include transform();
 	@include blurb-sizing($left: false, $width: false);
+	.blurb-title {
+		text-align: center;
+	}
 }
 
 
 #four {
-	@include transform(60%, 50%, 30%);
+	@include transform();
 	@include blurb-sizing($left: true, $width: true);
+	.blurb-title {
+		text-align: left;
+	}
 }
 
 
 #five {
-	@include transform(60%, 50%, 70%);
+	@include transform();
 	@include blurb-sizing($left: false, $width: true);
+	.blurb-title {
+		text-align: left;
+	}
 }
-
-
 
 
 
@@ -219,7 +224,6 @@ p {
 
 
 .work {
-	background: $dkpurple;
 	height: auto;
 }
 
@@ -229,7 +233,7 @@ p {
 }
 
 .sectionthree-title {
-  	width: 100%;
+  	width: auto;
   	height: auto;
   	@include section-three-title-mobile-p;
   	margin-top:	0%;
@@ -244,12 +248,14 @@ p {
 .Button-Background {
   width: 40vmin;
   border-radius: 18px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), inset 0 2px 0 0 #ffffff;
+  box-shadow: 0 1px 0px 0 $blueAccent, inset 0 2px 0 0 $blueAccent;
   border: solid 1px #979797;
-  background-color: $lavender;
+  background-color: $orange;
   @include filter-mobile-p;
   margin-bottom: 15px;
-  @include text-shadow-20;
+  position: relative;
+  z-index: 999;
+  text-shadow: 1px 1px 0px $black-20;
 }
 
 
@@ -257,16 +263,17 @@ p {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	flex-wrap: wrap;
 }
 #filter-menu {
 	width: 40vw;
-	z-index: 4;
+	z-index: 999;
 	position: absolute;
 }
 
 #filter-menu {
 	position:relative;
-	background: $lavender;
+	background-color: $blueAccent;
 	width: 90vw;
 	height: auto;
 	border-radius: 18px;
@@ -291,7 +298,8 @@ p {
 	padding-bottom: 5%;
 	.btn {
 		width: 25%;
-		background-color: $orange;
+		background-color: $dkpurple;
+		padding: 3%;
 		color: #fff;
 		border: none;
 		border-radius: 18px;
@@ -315,9 +323,11 @@ form{
 	width: 100%;
 	padding-left: 5%;
 	text-align: left;
+	color: #fff;
 	input{
 		width: auto;
-		padding-right: 3%;
+		padding-right: 7%;
+		margin-right: 3%;
 	}
 }
 
@@ -330,8 +340,6 @@ form{
 	flex-wrap:no-wrap;
 	padding-bottom: 5%;
 	justify-content: center;
-	background-color: $dkpurple;
-
 	div {
 		width: 60vw;
 		min-height: 260px;
@@ -342,6 +350,8 @@ form{
 		box-shadow: 0 2px 4px 0 $black-50;
 		border: solid 1px $lavender;
 		background-color: $dkpurple;
+		position: relative;
+		z-index: 900;
 	  	p {
 	  		text-align: center;
 	  		width: 10%;
@@ -353,19 +363,32 @@ form{
 
 //section four
 #footer{
-	background-color: $dkpurple;
-	position: relative;
+	background-color: $lavender;
 	height: 60vmin;
 	width: 100vw;
 }
-footer{
-	position: absolute;
-	right: 0px;
-	bottom: 0px;
-	background-repeat: no-repeat;
-	background-size: cover;
+
+#outline{
+	background-color: $blueAccent;
+	mask-image: url(img/footer-svg.svg);
+	mask-repeat: no-repeat;
+	mask-size: cover;
 	width: 100%;
 	height: 100%;
+}
+footer{
+	background-color: #fff;
+	mask-image: url(img/footer-svg.svg);
+	mask-repeat: no-repeat;
+	mask-size: cover;
+	width: 100%;
+	height: 100%;
+	@include center-element;
+	transition: width 1s, height 1s;
+}
+.draw {
+	width: 98%;
+	height: 98%;
 }
 
 .wrapper {
@@ -382,10 +405,12 @@ footer{
 	width: 50vmin;
 	height: 10vmin;
 	border-radius: 38px;
-	box-shadow: 0 2px 4px 0 $black-50;
-	border: solid 1px $orange;
+	box-shadow: 2px 2px 0px 0 $blueAccent;
+	border: solid 1px $blueAccent;
 	background-color: $orange;
 	@include email-btn-mobile-p;
+	position:relative;
+	z-index: 999;
 }
 
 
@@ -442,19 +467,17 @@ footer{
 		}
 	}
 	.titlebtnContainer {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
+		@include changeDirection();
 	}
 
-	.sectionthree-title {
-		flex-grow: 2;
+	.titlebtnContainer-hide{
+		@include changeDirection($row: false);
 	}
+
 
 	#filter-menu {
 		width: 40vw;
-		z-index: 4;
-		position: absolute;
+		flex-grow: 4;
 	}
 	.div-filter{
 		width: 25vw;
@@ -495,9 +518,6 @@ footer{
 	.arrow{
 		width: 80%;
 		height: 60%;
-	}
-	.sectionthree-title{
-		@include center-element;
 	}
 	.Button-Background{
 		height: 8vmin;

@@ -4,8 +4,10 @@ import Checkbox from './checkbox';
 class Filter extends React.Component {
 	render () {
 		return (
-			<div className="div-filter">
-				<button onClick={this.props.onClick} className='Button-Background' id="filterBtn">Filter By</button>
+			<React.Fragment>
+				<div className="div-filter">
+					<button onClick={this.props.onClick} className='Button-Background' id="filterBtn">Filter By</button>
+				</div>
 				<div id="filter-menu" className="hide">
 					<button onClick={this.props.onClick} className="close"> X </button>
 					<p className="option-title">
@@ -33,8 +35,8 @@ class Filter extends React.Component {
 			                </button>
 		                </div>
 					</form>
-  				</div>
-			</div>
+				</div>
+			</React.Fragment>
 		);
 	}
 }
