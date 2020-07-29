@@ -103,7 +103,41 @@ class App extends React.Component {
       line.style.strokeDashoffset = length;
     var draw = length * scrollpercent;
 
-    console.log(scrollpercent);
+
+
+    const blurbOne = document.querySelector('.blurbs .container:nth-child(1)');
+    const blurbTwo = document.querySelector('.blurbs .container:nth-child(2)');
+    const blurbThree = document.querySelector('.blurbs .container:nth-child(3)');
+    const blurbFour = document.querySelector('.blurbs .container:nth-child(4)');
+    const blurbFive = document.querySelector('.blurbs .container:nth-child(5)');
+
+    const blurbs = [blurbOne, blurbTwo, blurbThree, blurbFour, blurbFive];
+
+    blurbs.forEach( b => {
+      var position =  b.getBoundingClientRect();
+      if(position.top >= 70 && position.bottom <= window.innerHeight) {
+        console.log('Element is fully visible in screen');
+        b.classList.add('drawNow');
+      } else if(position.top < window.innerHeight && position.bottom >= 0) {
+        console.log('Element is partially visible in screen');
+        b.classList.remove('drawNow');
+      }
+    })
+
+    var position =  blurbOne.getBoundingClientRect();
+    console.log(position.top,
+                position.bottom);
+    // checking whether fully visible
+    if(position.top >= 70 && position.bottom <= window.innerHeight) {
+      console.log('Element is fully visible in screen');
+      const blurbOne = document.querySelector('.blurbs .container:nth-child(1)');
+      blurbOne.classList.add('drawNow');
+    } else if(position.top < window.innerHeight && position.bottom >= 0) {
+      console.log('Element is partially visible in screen');
+      const blurbOne = document.querySelector('.blurbs .container:nth-child(1)');
+      blurbOne.classList.remove('drawNow');
+
+    }
 
     // Reverse the drawing (when scrolling upwards)
     line.style.strokeDashoffset = length - draw;
@@ -122,41 +156,6 @@ class App extends React.Component {
     }else {
       const footer = document.querySelector('footer');
       footer.classList.remove('draw');
-    }
-    if(scrollpercent < 0.23 & scrollpercent > 0.18){
-      const blurbOne = document.querySelector('.blurbs .container:nth-child(1)');
-      blurbOne.classList.add('drawNow');
-    }else {
-      const blurbOne = document.querySelector('.blurbs .container:nth-child(1)');
-      blurbOne.classList.remove('drawNow');
-    }
-    if(scrollpercent < 0.27 & scrollpercent > 0.23){
-      const blurbTwo = document.querySelector('.blurbs .container:nth-child(2)');
-      blurbTwo.classList.add('drawNow');
-    }else {
-      const blurbTwo = document.querySelector('.blurbs .container:nth-child(2)');
-      blurbTwo.classList.remove('drawNow');
-    }
-    if(scrollpercent < 0.30 & scrollpercent > 0.27){
-      const blurbThree = document.querySelector('.blurbs .container:nth-child(3)');
-      blurbThree.classList.add('drawNow');
-    }else {
-      const blurbThree = document.querySelector('.blurbs .container:nth-child(3)');
-      blurbThree.classList.remove('drawNow');
-    }
-    if(scrollpercent < 0.34 & scrollpercent > 0.30){
-      const blurbFour = document.querySelector('.blurbs .container:nth-child(4)');
-      blurbFour.classList.add('drawNow');
-    }else {
-      const blurbFour = document.querySelector('.blurbs .container:nth-child(4)');
-      blurbFour.classList.remove('drawNow');
-    }
-    if(scrollpercent < 0.40 & scrollpercent > 0.34){
-      const blurbFive = document.querySelector('.blurbs .container:nth-child(5)');
-      blurbFive.classList.add('drawNow');
-    }else {
-      const blurbFive = document.querySelector('.blurbs .container:nth-child(5)');
-      blurbFive.classList.remove('drawNow');
     }
   }
 

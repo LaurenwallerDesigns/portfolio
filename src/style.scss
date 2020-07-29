@@ -51,6 +51,7 @@ header{
   	border-right-style: solid;
   	border-bottom-style: solid;
   	border-left-style: solid;
+  	margin-bottom: 5%;
 }
 
 .headerDesign {
@@ -74,7 +75,8 @@ header{
 }
 
 .subtitle-text {
-	margin-top: 25vmin;
+	margin-top: auto;
+	margin-bottom: auto;
 	@include header-subtitle-mobile-p;
 	z-index: 4;
 }
@@ -120,34 +122,18 @@ header{
 	width: $borderWidth;
 	@include center-element;
 	padding-bottom: 5%;
-	.container{
+	.container:nth-child(n){
 		width: $borderWidth;
 		background-color: $blueAccent;
 		@include center-element;
 		margin-top: 3%;
+		@include transform();
+		transition: padding 1s;
+		.blurb-container{
+			@include transform();
+		}
 
 	}
-	.container:nth-child(1){
-		@include transform();
-		transition: padding 1s;
-	}
-	.container:nth-child(2){
-		@include transform();
-		transition: padding 1s;
-	}
-	.container:nth-child(3){
-		@include transform();
-		transition: padding 1s;
-	}
-	.container:nth-child(4){
-		@include transform();
-		transition: padding 1s;
-	}
-	.container:nth-child(5){
-		@include transform();
-		transition: padding 1s;
-	}
-
 	.drawNow{
 		padding: 10px;
 	}
@@ -177,7 +163,6 @@ header{
 
 
 #one {
-	@include transform();
 	@include blurb-sizing($left: false, $width: false);
 	.blurb-title {
 		text-align: center;
@@ -185,7 +170,6 @@ header{
 }
 
 #two {
-	@include transform();
 	@include blurb-sizing($left: true, $width: false);
 	.blurb-title {
 		text-align: center;
@@ -193,7 +177,6 @@ header{
 }
 
 #three {
-	@include transform();
 	@include blurb-sizing($left: false, $width: false);
 	.blurb-title {
 		text-align: center;
@@ -202,7 +185,6 @@ header{
 
 
 #four {
-	@include transform();
 	@include blurb-sizing($left: true, $width: true);
 	.blurb-title {
 		text-align: left;
@@ -211,7 +193,6 @@ header{
 
 
 #five {
-	@include transform();
 	@include blurb-sizing($left: false, $width: true);
 	.blurb-title {
 		text-align: left;
@@ -266,7 +247,6 @@ header{
 	flex-wrap: wrap;
 }
 #filter-menu {
-	width: 40vw;
 	z-index: 999;
 	position: absolute;
 }
@@ -293,7 +273,7 @@ header{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	width: 90vw;
+	width: auto;
 	margin-top: 5%;
 	padding-bottom: 5%;
 	.btn {
@@ -317,7 +297,7 @@ header{
 }
 
 form{
-	width: 90vw;
+	width: auto;
 }
 .form-check {
 	width: 100%;
@@ -387,8 +367,8 @@ footer{
 	transition: width 1s, height 1s;
 }
 .draw {
-	width: 98%;
-	height: 98%;
+	width: 95%;
+	height: 95%;
 }
 
 .wrapper {
@@ -417,55 +397,7 @@ footer{
 
 //MEDIA QUERIES
 @media screen and (orientation: landscape) {
-	.right{
-		.div-blurb-text {
-			margin-left: auto;
-			margin-right: 28%;
-		}
-	}
-	.left{
-		.div-blurb-text {
-			margin-left: 15%;
-			margin-right: auto;
-		}
-	}
 
-	#one {
-		@include transform(20%, 50%, 60%);
-		&:hover {
-			@include transform(80%, 50%, 30%);
-		}
-	}
-
-	#two {
-		@include transform(25%, 50%, 30%);
-		&:hover {
-			@include transform(100%, 50%, 70%);
-		}
-	}
-
-	#three {
-		@include transform(20%, 50%, 60%);
-		&:hover {
-			@include transform(100%, 50%, 30%);
-		}
-	}
-
-
-	#four {
-		@include transform(25%, 50%, 30%);
-		&:hover {
-			@include transform(100%, 50%, 70%);
-		}
-	}
-
-
-	#five {
-		@include transform(25%, 50%, 60%);
-		&:hover {
-			@include transform(100%, 50%, 30%);
-		}
-	}
 	.titlebtnContainer {
 		@include changeDirection();
 	}
@@ -512,13 +444,42 @@ footer{
 	.title {
 		padding-top: 3%;
 	}
-	.subtitle-text{
-		margin-top: 20%;
+	.border{
+		width: 78vw;
+	}
+	.headerDesign{
+		width: 74vw;
 	}
 	.arrow{
 		width: 80%;
 		height: 60%;
 	}
+
+	.blurbs{
+		height: auto;
+		width: $borderWidth;
+		@include center-element;
+		padding-bottom: 5%;
+		.container:nth-child(n){
+			width: $borderWidth;
+			background-color: $blueAccent;
+			@include center-element;
+			margin-top: 3%;
+			@include transform(40%);
+			transition: padding 1s;
+			.blurb-container{
+				@include transform(40%);
+			}
+		}
+
+		.drawNow{
+			padding: 20px;
+		}
+	}
+	#filter-menu {
+		width: 50vw;
+	}
+
 	.Button-Background{
 		height: 8vmin;
 	}
@@ -526,7 +487,8 @@ footer{
 		flex-direction: row;
 		flex-wrap: wrap;
 		div {
-			width: 40vw;
+			width: 30vw;
+			height: 30vh;
 			margin: 15px;
 		}
 	}
@@ -537,9 +499,6 @@ footer{
 	.title {
 		padding-top: 8%;
 	}
-	.subtitle-text {
-		margin-top: 10%;
-	}
 	.arrows {
 		width: 10vw;
 	}
@@ -547,5 +506,27 @@ footer{
 		width: 100%;
 		height: 80%;
 	}
+	.blurbs{
+		height: auto;
+		width: $borderWidth;
+		@include center-element;
+		padding-bottom: 5%;
+		.container:nth-child(n){
+			width: $borderWidth;
+			background-color: $blueAccent;
+			@include center-element;
+			margin-top: 3%;
+			@include transform(20%);
+			transition: padding 1s;
+			.blurb-container{
+				@include transform(20%);
+			}
+		}
+
+		.drawNow{
+			padding: 20px;
+		}
+	}
 }
+
 
