@@ -106,9 +106,7 @@
   font-style: normal;
   line-height: normal;
   letter-spacing: 3.13px;
-  @include center-element;
   color: $dkpurple;
-  width: $borderWidth;
   span {
     font-size: 7vmin;
   }
@@ -217,9 +215,8 @@
 }
 
 @mixin email-btn-mobile-p {
-  text-shadow: 2px 1px 0px $black-50;
   font-family: Impact;
-  font-size: 5vmin;
+  font-size: 0px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;

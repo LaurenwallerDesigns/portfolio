@@ -98,6 +98,7 @@ class App extends React.Component {
   drawSvg() {
     var scrollpercent = (document.body.scrollTop + document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
     var line = document.getElementById("line");
+    line.classList.remove('hide');
     var length = line.getTotalLength();
       line.style.strokeDasharray = length;
       line.style.strokeDashoffset = length;
@@ -115,7 +116,8 @@ class App extends React.Component {
 
     blurbs.forEach( b => {
       var position =  b.getBoundingClientRect();
-      if(position.top >= 70 && position.bottom <= window.innerHeight) {
+      console.log(b, position.top, position.bottom, window.innerHeight);
+      if(position.top >= 0 && position.bottom <= window.innerHeight) {
         console.log('Element is fully visible in screen');
         b.classList.add('drawNow');
       } else if(position.top < window.innerHeight && position.bottom >= 0) {
@@ -124,24 +126,11 @@ class App extends React.Component {
       }
     })
 
-    var position =  blurbOne.getBoundingClientRect();
-    console.log(position.top,
-                position.bottom);
-    // checking whether fully visible
-    if(position.top >= 70 && position.bottom <= window.innerHeight) {
-      console.log('Element is fully visible in screen');
-      const blurbOne = document.querySelector('.blurbs .container:nth-child(1)');
-      blurbOne.classList.add('drawNow');
-    } else if(position.top < window.innerHeight && position.bottom >= 0) {
-      console.log('Element is partially visible in screen');
-      const blurbOne = document.querySelector('.blurbs .container:nth-child(1)');
-      blurbOne.classList.remove('drawNow');
-
-    }
 
     // Reverse the drawing (when scrolling upwards)
     line.style.strokeDashoffset = length - draw;
     var lineTwo = document.getElementById("line-two");
+      lineTwo.classList.remove('hide');
     var length = lineTwo.getTotalLength();
       lineTwo.style.strokeDasharray = length;
       lineTwo.style.strokeDashoffset = length;
@@ -312,13 +301,13 @@ class App extends React.Component {
       <div className="svg-container">
         <div className="svg-item">
           <svg id="mySVG" version="1.1" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 659 522" enable-background="new 0 0 659 522" preserveAspectRatio="none">
-            <path class="path" width="100%" height="100%" fill="none" stroke="#28AFB0" stroke-width="5" stroke-miterlimit="10" id="line" d="M2.5 2.5v517" stroke-dasharray="2042 300" stroke-dashoffset="2342"/>
+            <path class="path hide" width="100%" height="100%" fill="none" stroke="#28AFB0" stroke-width="5" stroke-miterlimit="10" id="line" d="M2.5 2.5v517" stroke-dasharray="2042 300" stroke-dashoffset="2342"/>
           </svg>
         </div>
         <div className="svg-item">
           <svg id="mySVGTwo" version="1.1" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 659 522" enable-background="new 0 0 659 522" preserveAspectRatio="none">
 
-            <path id="line-two" class="path" width="100%" height="100%" fill="none" stroke="#28AFB0" stroke-width="5" stroke-miterlimit="10" d="M656.5,2.5v517" stroke-dasharray="2042 300" stroke-dashoffset="2342" />
+            <path id="line-two" class="path hide" width="100%" height="100%" fill="none" stroke="#28AFB0" stroke-width="5" stroke-miterlimit="10" d="M656.5,2.5v517" stroke-dasharray="2042 300" stroke-dashoffset="2342" />
           </svg>
         </div>
       </div>

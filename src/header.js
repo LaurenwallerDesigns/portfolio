@@ -5,11 +5,9 @@ class Header extends React.Component {
 		console.log(this.props.height);
 		return (
 			<header id="header">
-				<div className="border">
 					<div className="headerDesign">
 						<h1 className="title"> Lauren Hamann </h1>
 					</div>
-				</div>
 
 				<div className="subtitle">
 					<h2 className="subtitle-text">

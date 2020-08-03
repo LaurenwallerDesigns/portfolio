@@ -38,26 +38,19 @@ display: block;
 //Section One
 header{
 	height: 100vh;
+	@include center-element;
+	width: $borderWidth;
 	text-align: center;
 	@include bottom-line;
+	display: flex;
+	flex-direction: column;
 }
 
-.border{
-	@include center-element;
-	width: 84vw;
-	height: auto;
-	border: 10px solid $blueAccent;
-	border-top-style: none;
-  	border-right-style: solid;
-  	border-bottom-style: solid;
-  	border-left-style: solid;
-  	margin-bottom: 5%;
-}
 
 .headerDesign {
 	@include center-element;
-	width: $borderWidth;
-	height: auto;
+	width: 70vw;
+	height:	auto;
 	z-index: 999;
 	border: 10px solid $orange;
 	border-top-style: none;
@@ -74,9 +67,16 @@ header{
 	z-index: 4;
 }
 
+.subtitle {
+	height: auto;
+	margin: auto;
+	padding: auto;
+	width: 70vw;
+	text-align: center;
+}
+
 .subtitle-text {
-	margin-top: auto;
-	margin-bottom: auto;
+	width: auto;
 	@include header-subtitle-mobile-p;
 	z-index: 4;
 }
@@ -123,7 +123,7 @@ header{
 	@include center-element;
 	padding-bottom: 5%;
 	.container:nth-child(n){
-		width: $borderWidth;
+		width: 50vw;
 		background-color: $blueAccent;
 		@include center-element;
 		margin-top: 3%;
@@ -206,15 +206,23 @@ header{
 
 .work {
 	height: auto;
+	width: $borderWidth;
+	@include center-element;
+
 }
 
 .titlebtnContainer {
+	width: $borderWidth;
+	@include center-element;
 	display: flex;
 	flex-direction: column;
+	align-content: center;
+	align-items: center;
+	flex-wrap: wrap;
 }
 
 .sectionthree-title {
-  	width: auto;
+	width: auto;
   	height: auto;
   	@include section-three-title-mobile-p;
   	margin-top:	0%;
@@ -239,13 +247,6 @@ header{
   text-shadow: 1px 1px 0px $black-20;
 }
 
-
-.titlebtnContainer {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	flex-wrap: wrap;
-}
 #filter-menu {
 	z-index: 999;
 	position: absolute;
@@ -315,20 +316,23 @@ form{
 .flex-project {
 	min-height: 100vh;
 	height: auto;
+	width: $borderWidth;
 	display: flex;
 	flex-direction: column;
-	flex-wrap:no-wrap;
 	padding-bottom: 5%;
 	justify-content: center;
+	align-items: center;
+	align-content: center;
+	@include center-element;
 	div {
-		width: 60vw;
-		min-height: 260px;
-		height: 40vh;
+		width: 70vw;
+		min-height: 120px;
+		height: 75vw;
 		margin-left: auto;
 		margin-right: auto;
-		margin-bottom: 8px;
-		box-shadow: 0 2px 4px 0 $black-50;
-		border: solid 1px $lavender;
+		margin-bottom: 12px;
+		box-shadow: -4px 4px 0px 0 $dkpurple,
+		 -8px 8px 0px 0 $black-20;
 		background-color: $dkpurple;
 		position: relative;
 		z-index: 900;
@@ -366,9 +370,13 @@ footer{
 	@include center-element;
 	transition: width 1s, height 1s;
 }
-.draw {
-	width: 95%;
-	height: 95%;
+
+footer{
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
 }
 
 .wrapper {
@@ -376,23 +384,32 @@ footer{
 }
 .footer-title {
 	@include footer-title-mobile-p;
-	@include center-element;
-	padding-top: 20vmin;
 	margin-bottom: 5vmin;
 }
 
 .email {
-	width: 50vmin;
-	height: 10vmin;
+	width: 0px;
+	height: 0px;
 	border-radius: 38px;
-	box-shadow: 2px 2px 0px 0 $blueAccent;
-	border: solid 1px $blueAccent;
 	background-color: $orange;
 	@include email-btn-mobile-p;
 	position:relative;
 	z-index: 999;
+	transition: width 1s, height 1s, font-size 2s, border 2s, box-shadow 1s 2.5s, text-shadow 1s 2.5s;
 }
 
+.draw {
+	width: 95%;
+	height: 95%;
+	.email {
+		box-shadow: 2px 2px 0px 0 $blueAccent;
+		border: solid 1px $blueAccent;
+		width: 50vmin;
+		height: 15vmin;
+		font-size: 7vmin;
+		text-shadow: 2px 1px 0px $black-50;
+	}
+}
 
 
 //MEDIA QUERIES
@@ -450,9 +467,8 @@ footer{
 	.headerDesign{
 		width: 74vw;
 	}
-	.arrow{
-		width: 80%;
-		height: 60%;
+	.arrows	{
+		width: 7vw;
 	}
 
 	.blurbs{
@@ -488,7 +504,7 @@ footer{
 		flex-wrap: wrap;
 		div {
 			width: 30vw;
-			height: 30vh;
+			height: 35vw;
 			margin: 15px;
 		}
 	}
@@ -499,12 +515,8 @@ footer{
 	.title {
 		padding-top: 8%;
 	}
-	.arrows {
-		width: 10vw;
-	}
-	.arrow {
-		width: 100%;
-		height: 80%;
+	.arrows{
+		width: 5vw;
 	}
 	.blurbs{
 		height: auto;
