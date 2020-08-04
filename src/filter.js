@@ -30,7 +30,7 @@ class Filter extends React.Component {
 			                >
 			                  Deselect All
 			                </button>
-			                <button type="submit" className="btn btn-done">
+			                <button type="submit" className="btn btn-done" onClick={this.props.onClick}>
 			                  Done
 			                </button>
 		                </div>

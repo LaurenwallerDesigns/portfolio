@@ -81,7 +81,6 @@
 
 @mixin title-mobile-p {
   width: 100%;
-  @include text-shadow-50;
   font-family: Jonah;
   font-size: 16.75vmin;
   font-weight: normal;
@@ -90,7 +89,9 @@
   line-height: normal;
   letter-spacing: 3.13px;
   text-align: center;
-  color: $dkpurple;
+  color: $orange;
+  -webkit-text-stroke: 0.1px $orangeAccent;
+  text-shadow: 0px 4px 4px $orangeAccent;
   @include center-element;
   @media (min-width: $breakpoint-tablet-port) {
     width: 80%;
@@ -98,7 +99,6 @@
 }
 
 @mixin header-subtitle-mobile-p {
-  @include text-shadow-20;
   font-family: Impact;
   font-size: 8.5vmin;
   font-weight: normal;
@@ -106,7 +106,9 @@
   font-style: normal;
   line-height: normal;
   letter-spacing: 3.13px;
-  color: $dkpurple;
+  color: $orange;
+  -webkit-text-stroke: 1px $orangeAccent;
+  text-shadow: 0px 4px 4px $orangeAccent;
   span {
     font-size: 7vmin;
   }
@@ -124,8 +126,9 @@
   letter-spacing: 4.93px;
   text-align: center;
   width: $borderWidth;
-  color: $dkpurple;
-  @include text-shadow-20;
+  color: $orange;
+  -webkit-text-stroke: 0.1px $orangeAccent;
+  text-shadow: 0px 4px 4px $orangeAccent;
   @media (min-width: $breakpoint-tablet-port) {
     font-size: 12vmin;
     letter-spacing: 12.93px;
@@ -148,7 +151,7 @@
   line-height: normal;
   letter-spacing: 5px;
   text-align: center;
-  color: $dkpurple;
+  color: $orange;
 }
 
 
@@ -162,7 +165,7 @@
   letter-spacing: 3.13px;
   text-align: center;
   width: $borderWidth;
-  color: $dkpurple;
+  color: $orange;
   @media (min-width: $breakpoint-tablet-port) {
     letter-spacing: 6.93px;
   }
@@ -172,7 +175,7 @@
 }
 
 @mixin title-blurb {
-  font-family: AlegreyaSans;
+  font-family: Impact;
   font-size: 6vmin;
   margin-top: 0px;
   padding-bottom: 0px;
@@ -180,9 +183,10 @@
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
-  letter-spacing: 3.13px;
-  color: $dkpurple;
-  text-shadow: 1px 1px 0px $black-20;
+  letter-spacing: 4.13px;
+  color: $orange;
+  -webkit-text-stroke: 0.1px $orangeAccent;
+  text-shadow: 0px 4px 4px $orangeAccent;
   @media (min-width: $breakpoint-tablet-land) {
     font-size: 5vmin;
   }
@@ -196,13 +200,12 @@
   font-style: normal;
   line-height: normal;
   letter-spacing: 3.13px;
-  color: $black-20;
+  color: $orangeAccent;
   list-style: none;
 }
 
 
 @mixin section-three-title-mobile-p {
-  @include text-shadow-below;
   font-family: Impact;
   font-size: 20vmin;
   font-weight: normal;
@@ -211,33 +214,36 @@
   line-height: normal;
   letter-spacing: 3.13px;
   text-align: center;
-  color: $dkpurple;
+  color: $orange;
+  -webkit-text-stroke: 1px $orangeAccent;
+  text-shadow: 0px 4px 4px $orangeAccent;
 }
 
 @mixin email-btn-mobile-p {
-  font-family: Impact;
+  font-family: AlegreyaSans;
   font-size: 0px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
-  letter-spacing: 3.92px;
+  letter-spacing: 1.92px;
   text-align: center;
-  color: $dkpurple;
+  color: $orange;
 }
 
 @mixin footer-title-mobile-p {
-  text-shadow: 2px 0px 0px $black-50;
-  font-family: Jonah;
+  color: $orange;
+  -webkit-text-stroke: 0.3px $orangeAccent;
+  text-shadow: 0px 4px 4px $orangeAccent;
+  font-family: Impact;
   font-size: 10vmin;
   margin-top: 0px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
-  letter-spacing: 2.33px;
+  letter-spacing: 6.33px;
   text-align: center;
-  color: $dkpurple;
 }
 
 

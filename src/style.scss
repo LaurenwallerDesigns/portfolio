@@ -13,7 +13,7 @@ $screenWidth: 100vw;
 
 
 #root {
-	background: $lavender;
+	background: $black;
 	overflow-x: hidden;
 }
 
@@ -52,7 +52,7 @@ header{
 	width: 70vw;
 	height:	auto;
 	z-index: 999;
-	border: 10px solid $orange;
+	border: 10px solid $blue;
 	border-top-style: none;
   	border-right-style: solid;
   	border-bottom-style: solid;
@@ -63,7 +63,7 @@ header{
 	margin-top: 0px;
 	padding-top: 10vmin;
 	@include title-mobile-p;
-	background-color: $lavender;
+	background-color: $black;
 	z-index: 4;
 }
 
@@ -239,12 +239,12 @@ header{
   border-radius: 18px;
   box-shadow: 0 1px 0px 0 $blueAccent, inset 0 2px 0 0 $blueAccent;
   border: solid 1px #979797;
-  background-color: $orange;
+  background-color: $blue;
   @include filter-mobile-p;
   margin-bottom: 15px;
   position: relative;
   z-index: 999;
-  text-shadow: 1px 1px 0px $black-20;
+  text-shadow: 1px 1px 0px $orangeAccent;
 }
 
 #filter-menu {
@@ -279,14 +279,14 @@ header{
 	padding-bottom: 5%;
 	.btn {
 		width: 25%;
-		background-color: $dkpurple;
+		background-color: $orange;
 		padding: 3%;
 		color: #fff;
 		border: none;
 		border-radius: 18px;
-		box-shadow: 0px 3px 2px $black-50;
+		box-shadow: 0px 3px 2px $orangeAccent;
 		&:hover {
-			box-shadow: 0px -3px 2px $black-50;
+			box-shadow: 0px -3px 2px $orangeAccent;
 		}
 	}
 }
@@ -331,9 +331,9 @@ form{
 		margin-left: auto;
 		margin-right: auto;
 		margin-bottom: 12px;
-		box-shadow: -4px 4px 0px 0 $dkpurple,
-		 -8px 8px 0px 0 $black-20;
-		background-color: $dkpurple;
+		box-shadow: -4px 4px 0px 0 $orange,
+		 -8px 8px 0px 0 $orangeAccent;
+		background-color: $orange;
 		position: relative;
 		z-index: 900;
 	  	p {
@@ -347,7 +347,7 @@ form{
 
 //section four
 #footer{
-	background-color: $lavender;
+	background-color: $black;
 	height: 60vmin;
 	width: 100vw;
 }
@@ -359,16 +359,34 @@ form{
 	mask-size: cover;
 	width: 100%;
 	height: 100%;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
 }
+
+#innerline{
+	background-color: $blue;
+	mask-image: url(img/footer-svg.svg);
+	mask-repeat: no-repeat;
+	mask-size: cover;
+	@include center-element;
+	width: 97.5%;
+	height: 97.5%;
+	transition: width 1s, height 1s;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+}
+
 footer{
-	background-color: #fff;
+	background-color:$blueLight;
 	mask-image: url(img/footer-svg.svg);
 	mask-repeat: no-repeat;
 	mask-size: cover;
 	width: 100%;
 	height: 100%;
-	@include center-element;
-	transition: width 1s, height 1s;
+	margin: auto;
+	transition: width 2s, height 2.5s;
 }
 
 footer{
@@ -391,7 +409,7 @@ footer{
 	width: 0px;
 	height: 0px;
 	border-radius: 38px;
-	background-color: $orange;
+	background-color: $blue;
 	@include email-btn-mobile-p;
 	position:relative;
 	z-index: 999;
@@ -407,7 +425,7 @@ footer{
 		width: 50vmin;
 		height: 15vmin;
 		font-size: 7vmin;
-		text-shadow: 2px 1px 0px $black-50;
+		text-shadow: 2px 1px 0px $orangeAccent;
 	}
 }
 
@@ -452,6 +470,17 @@ footer{
 		div {
 			width: 40%;
 			height: 44vh;
+		}
+	}
+
+	.draw {
+		width: 97%;
+		height: 95%;
+		.email {
+			width: 50vmin;
+			height: 10vmin;
+			font-size: 5vmin;
+			text-shadow: 2px 1px 0px $orangeAccent;
 		}
 	}
 	

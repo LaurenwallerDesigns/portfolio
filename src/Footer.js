@@ -6,10 +6,12 @@ class Footer extends React.Component {
 		return (
 			<div id="footer" className="wrapper section">
 				<div id="outline">
-					<footer>
-						<h1 className='footer-title'> Contact Me </h1>
-						<button className="email"> Email </button>
-					</footer>
+					<div id="innerline">
+						<footer>
+							<h1 className='footer-title'> Contact Me </h1>
+							<button className="email"> Email </button>
+						</footer>
+					</div>
 				</div>
 			</div>
 		);

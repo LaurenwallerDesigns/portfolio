@@ -4,7 +4,7 @@
 }
 
 @mixin bottom-line {
-	border: 1px solid $dkpurple;
+	border: 1px solid $orange;
 	border-bottom-style: solid;
 	border-top-style: none;
   	border-right-style: none;
@@ -12,21 +12,21 @@
 }
 
 @mixin text-shadow-20 {
-	text-shadow: 4px 1px 0px $black-20;
+	text-shadow: 4px 1px 0px $orangeAccent;
 }
 
 @mixin text-shadow-50 {
-	text-shadow: 2px 4px 0px $black-50;
+	text-shadow: 2px 4px 0px $orangeAccent;
 }
 
 @mixin text-shadow-below {
-	text-shadow: -2px 8px 0px $black-50;
+	text-shadow: -2px 8px 0px $orangeAccent;
 }
 
 @mixin blurb-sizing($left: false, $width: false) {
 	width:auto;
 	position: relative;
-	background-color: $orange;
+	background-color: $blue;
 	.div-blurb-text {
 		z-index: 3;
 		padding: 3vh;
