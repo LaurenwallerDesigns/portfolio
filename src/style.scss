@@ -123,7 +123,7 @@ header{
 	@include center-element;
 	padding-bottom: 5%;
 	.container:nth-child(n){
-		width: 50vw;
+		width: auto;
 		background-color: $blueAccent;
 		@include center-element;
 		margin-top: 3%;
@@ -149,7 +149,6 @@ header{
 	.blurb-container:nth-child(n + 4){
 		height: auto;
 		.blurb-title {
-			width: 50vmin;
 			padding-top: 5vmin;
 		}
 	}
@@ -254,7 +253,7 @@ header{
 
 #filter-menu {
 	position:relative;
-	background-color: $blueAccent;
+	background-color: $blue;
 	width: 90vw;
 	height: auto;
 	border-radius: 18px;
@@ -267,6 +266,12 @@ header{
 		background: none;
 		border: none;
 		font-size: 1.5em;
+		color: #fff;
+		text-shadow: 1px 1px 2px #000;
+		transition: text-shadow 1s;
+		&:hover{
+			text-shadow: 2px 2px 2px #000;
+		}
 	}
 }
 
@@ -285,16 +290,26 @@ header{
 		border: none;
 		border-radius: 18px;
 		box-shadow: 0px 3px 2px $orangeAccent;
+		transition: box-shadow 1s;
 		&:hover {
 			box-shadow: 0px -3px 2px $orangeAccent;
 		}
 	}
 }
 
+label {
+	color: $black;
+	text-transform: uppercase;
+}
+
+
 .option-title{
 	padding-top: 5%;
 	text-align: center;
 	width: 100%;
+	@include filter-mobile-p;
+	font-size: 3.5vmin;
+	text-transform: uppercase;
 }
 
 form{
@@ -304,11 +319,18 @@ form{
 	width: 100%;
 	padding-left: 5%;
 	text-align: left;
-	color: #fff;
 	input{
 		width: auto;
 		padding-right: 7%;
 		margin-right: 3%;
+		box-shadow: 1px 1px 2px #000;
+		transition: box-shadow 1s;
+		&:hover{
+			box-shadow: 2px 4px 4px #000;
+		}
+		&:checked{
+			color: $black;
+		}
 	}
 }
 
@@ -413,19 +435,24 @@ footer{
 	@include email-btn-mobile-p;
 	position:relative;
 	z-index: 999;
-	transition: width 1s, height 1s, font-size 2s, border 2s, box-shadow 1s 2.5s, text-shadow 1s 2.5s;
+	box-shadow: 2px 2px 0px 0 $blueAccent;
+	transition: width 1s, height 1s, font-size 2s, border 2s, text-shadow 1s 1.5s;
+	&:hover	{
+		box-shadow: 2px -2px 0px 0 $blueAccent;
+	}
+
 }
 
 .draw {
 	width: 95%;
 	height: 95%;
 	.email {
-		box-shadow: 2px 2px 0px 0 $blueAccent;
 		border: solid 1px $blueAccent;
 		width: 50vmin;
 		height: 15vmin;
 		font-size: 7vmin;
 		text-shadow: 2px 1px 0px $orangeAccent;
+ 
 	}
 }
 
@@ -452,10 +479,6 @@ footer{
 	.Button-Background{
 		width: 20vw;
 		margin-right: 2vw;
-	}
-
-	.buttons {
-		width: 40vw;
 	}
 
 	.flex-project {

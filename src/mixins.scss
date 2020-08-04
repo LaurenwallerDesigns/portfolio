@@ -11,12 +11,14 @@
   	border-left-style: none;
 }
 
-@mixin text-shadow-20 {
-	text-shadow: 4px 1px 0px $orangeAccent;
+@mixin text-outline-thick {
+	-webkit-text-stroke: 1px $orangeAccent;
+  	text-shadow: 0px 4px 4px $orangeAccent;
 }
 
-@mixin text-shadow-50 {
-	text-shadow: 2px 4px 0px $orangeAccent;
+@mixin text-outline-thin {
+	-webkit-text-stroke: 0.1px $orangeAccent;
+  	text-shadow: 0px 4px 4px $orangeAccent;
 }
 
 @mixin text-shadow-below {

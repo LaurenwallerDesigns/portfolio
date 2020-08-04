@@ -90,8 +90,7 @@
   letter-spacing: 3.13px;
   text-align: center;
   color: $orange;
-  -webkit-text-stroke: 0.1px $orangeAccent;
-  text-shadow: 0px 4px 4px $orangeAccent;
+  @include text-outline-thin;
   @include center-element;
   @media (min-width: $breakpoint-tablet-port) {
     width: 80%;
@@ -107,8 +106,7 @@
   line-height: normal;
   letter-spacing: 3.13px;
   color: $orange;
-  -webkit-text-stroke: 1px $orangeAccent;
-  text-shadow: 0px 4px 4px $orangeAccent;
+  @include text-outline-thick;
   span {
     font-size: 7vmin;
   }
@@ -127,8 +125,7 @@
   text-align: center;
   width: $borderWidth;
   color: $orange;
-  -webkit-text-stroke: 0.1px $orangeAccent;
-  text-shadow: 0px 4px 4px $orangeAccent;
+  @include text-outline-thin;
   @media (min-width: $breakpoint-tablet-port) {
     font-size: 12vmin;
     letter-spacing: 12.93px;
@@ -152,6 +149,7 @@
   letter-spacing: 5px;
   text-align: center;
   color: $orange;
+  text-shadow: 0px 2px 2px $black;
 }
 
 
@@ -185,8 +183,7 @@
   line-height: normal;
   letter-spacing: 4.13px;
   color: $orange;
-  -webkit-text-stroke: 0.1px $orangeAccent;
-  text-shadow: 0px 4px 4px $orangeAccent;
+  @include text-outline-thin;
   @media (min-width: $breakpoint-tablet-land) {
     font-size: 5vmin;
   }
