@@ -6,6 +6,7 @@
 		@include center-element;
 		transition: width 1s;
 		padding: 3%;
+		text-align: center;
 	}
 	.blurb-title {
 		width: auto;
@@ -15,7 +16,7 @@
 		margin-top: 2%;
 		padding-left: 0px;
 		width: auto;
-		text-align: left;
+		text-align: center;
 		li {
 			width: auto;
 			@include li-blurb-mobile-p;

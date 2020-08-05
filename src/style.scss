@@ -37,7 +37,8 @@ display: block;
 
 //Section One
 header{
-	height: 100vh;
+	min-height: 100vh;
+	height: auto;
 	@include center-element;
 	width: $borderWidth;
 	text-align: center;
@@ -120,6 +121,7 @@ header{
 .blurbs{
 	height: auto;
 	width: $borderWidth;
+	max-width: 500px;
 	@include center-element;
 	padding-bottom: 5%;
 	.container:nth-child(n){
@@ -163,39 +165,24 @@ header{
 
 #one {
 	@include blurb-sizing($left: false, $width: false);
-	.blurb-title {
-		text-align: center;
-	}
 }
 
 #two {
 	@include blurb-sizing($left: true, $width: false);
-	.blurb-title {
-		text-align: center;
-	}
 }
 
 #three {
 	@include blurb-sizing($left: false, $width: false);
-	.blurb-title {
-		text-align: center;
-	}
 }
 
 
 #four {
 	@include blurb-sizing($left: true, $width: true);
-	.blurb-title {
-		text-align: left;
-	}
 }
 
 
 #five {
 	@include blurb-sizing($left: false, $width: true);
-	.blurb-title {
-		text-align: left;
-	}
 }
 
 
@@ -467,8 +454,6 @@ footer{
 	.titlebtnContainer-hide{
 		@include changeDirection($row: false);
 	}
-
-
 	#filter-menu {
 		width: 40vw;
 		flex-grow: 4;
@@ -523,27 +508,6 @@ footer{
 		width: 7vw;
 	}
 
-	.blurbs{
-		height: auto;
-		width: $borderWidth;
-		@include center-element;
-		padding-bottom: 5%;
-		.container:nth-child(n){
-			width: $borderWidth;
-			background-color: $blueAccent;
-			@include center-element;
-			margin-top: 3%;
-			@include transform(40%);
-			transition: padding 1s;
-			.blurb-container{
-				@include transform(40%);
-			}
-		}
-
-		.drawNow{
-			padding: 20px;
-		}
-	}
 	#filter-menu {
 		width: 50vw;
 	}
@@ -570,27 +534,7 @@ footer{
 	.arrows{
 		width: 5vw;
 	}
-	.blurbs{
-		height: auto;
-		width: $borderWidth;
-		@include center-element;
-		padding-bottom: 5%;
-		.container:nth-child(n){
-			width: $borderWidth;
-			background-color: $blueAccent;
-			@include center-element;
-			margin-top: 3%;
-			@include transform(20%);
-			transition: padding 1s;
-			.blurb-container{
-				@include transform(20%);
-			}
-		}
 
-		.drawNow{
-			padding: 20px;
-		}
-	}
 }
 
 
