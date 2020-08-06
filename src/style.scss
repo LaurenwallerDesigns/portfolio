@@ -333,7 +333,7 @@ form{
 	align-items: center;
 	align-content: center;
 	@include center-element;
-	div {
+	div  {
 		width: 70vw;
 		min-height: 120px;
 		height: 75vw;
@@ -342,7 +342,7 @@ form{
 		margin-bottom: 12px;
 		box-shadow: -4px 4px 0px 0 $orange,
 		 -8px 8px 0px 0 $orangeAccent;
-		background-color: $orange;
+		
 		position: relative;
 		z-index: 900;
 	  	p {
@@ -350,6 +350,30 @@ form{
 	  		width: 10%;
 	  	}
 	}
+
+	.orange {
+		background-color: $orange;
+	}
+}
+
+
+
+#left-arrow,
+#right-arrow {
+	width: auto;
+	height: auto;
+	background-color: none;
+	border: none;
+	position: absolute;
+}
+
+#left-arrow {
+	left: 0;
+	top: 50%;
+}
+#right-arrow {
+	right: 0;
+	top: 50%;
 }
 
 

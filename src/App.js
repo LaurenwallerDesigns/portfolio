@@ -11,28 +11,36 @@ import Prevprojects from './prevproject';
 
 const projects = [{id: "prev-one",
                   classes: ["react", "html", "css"],
-                  display: true},
+                  display: true,
+                  color: "img"},
                 {id: "prev-two",
                 classes: ["AJAX", "html", "css"],
-                display: true},
+                display: true,
+                color: "img"},
                 {id: "prev-three",
                 classes: ["html", "css", "js"],
-              display: true},
+                display: true,
+                color: "img"},
                 {id: "prev-four",
                 classes: ["html", "css", "js"],
-              display: true},
+                display: true,
+                color: "img"},
                 {id: "prev-five",
                 classes: ["html", "css", "js"],
-              display: true},
+                display: true,
+                color: "img"},
                 {id: "prev-six",
                 classes: ["html", "css", "js", "Bootstrap"],
-              display: true},
+                display: true,
+                color: "img"},
                 {id: "prev-seven",
                 classes: ["html", "css", "js"],
-              display: true},
+                display: true,
+                color: "img"},
                 {id: "prev-eight",
                 classes: ["html", "JSON-T", "SCSS"],
-                display: true}
+                display: true,
+                color: "img"}
             ];
 
 const OPTIONS = ["react", "js", "html", "AJAX", "css", "SCSS", "Less", "JSON-T", "Bootstrap"];
@@ -53,6 +61,7 @@ class App extends React.Component {
     };
     this.arrowClick = this.arrowClick.bind(this);
     this.filterBtn = this.filterBtn.bind(this);
+    this.projectArrowClick = this.projectArrowClick.bind(this);
   }
    componentDidMount() {
     this.insertText();
@@ -64,8 +73,7 @@ class App extends React.Component {
 
   componentWillUnmount() {
   }
-  // HTML insert for blurbs
-
+//scroll tracking for arrow and general scrolling
   scrollTop() {
     const sectionOne = document.querySelector('#header').offsetTop;
     const sectionTwo = document.querySelector('#experience').offsetTop - 100;
@@ -95,6 +103,8 @@ class App extends React.Component {
     return position;
   }
 
+//Scroll tracking for the outer lines border 
+//and onscroll for each blurb outline animation
   drawSvg() {
     var scrollpercent = (document.body.scrollTop + document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
     var line = document.getElementById("line");
@@ -116,12 +126,9 @@ class App extends React.Component {
 
     blurbs.forEach( b => {
       var position =  b.getBoundingClientRect();
-      console.log(b, position.top, position.bottom, window.innerHeight);
       if(position.top >= 0 && position.bottom <= window.innerHeight) {
-        console.log('Element is fully visible in screen');
         b.classList.add('drawNow');
       } else if(position.top < window.innerHeight && position.bottom >= 0) {
-        console.log('Element is partially visible in screen');
         b.classList.remove('drawNow');
       }
     })
@@ -148,6 +155,8 @@ class App extends React.Component {
     }
   }
 
+
+//Insert HTML into blurbs
   insertText() {
     const blurbs = document.querySelectorAll(".blurbs .blurb-container");
     blurbs.forEach( b => {
@@ -168,6 +177,37 @@ class App extends React.Component {
     })
   }
 
+
+//left/right arrows onclick
+  projectArrowClick(event) {
+    const colors = ["orangeAccent", "orange", "img"];
+    const arrow = event.target;
+    const arrowID = arrow.id;
+    const nodeParent = arrow.parentNode.id;
+    for(let project = 0; project < projects.length; project++) {
+      const id = projects[project].id;
+        if(id === nodeParent) {
+          const currColor = projects[project].color;
+          colors.forEach( co => {
+            if(currColor === co) {
+              const index = colors.indexOf(co);
+              if(arrowID === "left-arrow"){
+                const moveLeftIndex = index - 1 === -1 ? colors.length - 1: index - 1;
+                const newColor = colors[moveLeftIndex];
+                  projects[project].color = newColor;
+              }
+            }
+          })
+
+      }
+  }
+
+  this.setState({
+    projects: projects
+  });
+}
+
+//Onclick event for the arrows
   arrowClick(event) {
     const button = event.target.id;
     const sections = ["#header", "#experience", "#work", "#footer"];
@@ -187,6 +227,8 @@ class App extends React.Component {
     }
   }
 
+
+//Onclick of filter button Open/Close
   filterBtn(event) {
     const filterMenu = document.getElementById('filter-menu');
     filterMenu.classList.toggle('hide');
@@ -196,6 +238,8 @@ class App extends React.Component {
     title.classList.toggle('titlebtnContainer-hide');
   }
 
+
+//Onclick for select all/none in filter button
   selectAllCheckboxes = isSelected => {
     Object.keys(this.state.checkboxes).forEach(checkbox => {
       this.setState(prevState => ({
@@ -207,10 +251,14 @@ class App extends React.Component {
     });
   };
 
+
+//changes True/False for previous function 
   selectAll = () => this.selectAllCheckboxes(true);
 
   deselectAll = () => this.selectAllCheckboxes(false);
 
+
+//change checkbox event for when checked
   handleCheckboxChange = changeEvent => {
     const { name } = changeEvent.target;
 
@@ -222,6 +270,8 @@ class App extends React.Component {
     }));
   };
 
+
+//Submits and filters projects
   handleFormSubmit = formSubmitEvent => {
     formSubmitEvent.preventDefault();
     this.selected = [];
@@ -234,6 +284,8 @@ class App extends React.Component {
       this.filterProjects(this.selected);
   };
 
+
+//changes the array of filtered projects
   filterProjects(array) {
     const filteredProjects = [];
     if(array === undefined || array.length < 1) {
@@ -252,11 +304,6 @@ class App extends React.Component {
       }
       //Filters through projects to only display the project once
       const result = filteredProjects.filter((item, index) => {
-        console.log(
-          item, 
-          index, 
-          filteredProjects.indexOf(item),
-          filteredProjects.indexOf(item) === index);
         return filteredProjects.indexOf(item) === index
       });
 
@@ -267,6 +314,7 @@ class App extends React.Component {
   }
 
 
+//Renders checkbox
   createCheckbox = option => (
     <Checkbox
       label={option}
@@ -282,12 +330,13 @@ class App extends React.Component {
   render () {
     //document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-    //console.log(vh);
     this.projects = this.state.projects.map((id, index) => {
       return <Prevprojects 
               id={id.id}
               key={index}
               classes={id.classes}
+              color={id.color}
+              arrowClick={this.projectArrowClick}
               />
     });
 
@@ -300,14 +349,14 @@ class App extends React.Component {
       <React.Fragment>
       <div className="svg-container">
         <div className="svg-item">
-          <svg id="mySVG" version="1.1" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 659 522" enable-background="new 0 0 659 522" preserveAspectRatio="none">
-            <path class="path hide" width="100%" height="100%" fill="none" stroke="#28AFB0" stroke-width="5" stroke-miterlimit="10" id="line" d="M2.5 2.5v517" stroke-dasharray="2042 300" stroke-dashoffset="2342"/>
+          <svg id="mySVG" version="1.1" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 659 522" enableBackground="new 0 0 659 522" preserveAspectRatio="none">
+            <path className="path hide" width="100%" height="100%" fill="none" stroke="#28AFB0" strokeWidth="5" strokeMiterlimit="10" id="line" d="M2.5 2.5v517" strokeDasharray="2042 300" strokeDashoffset="2342"/>
           </svg>
         </div>
         <div className="svg-item">
-          <svg id="mySVGTwo" version="1.1" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 659 522" enable-background="new 0 0 659 522" preserveAspectRatio="none">
+          <svg id="mySVGTwo" version="1.1" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 659 522" enableBackground="new 0 0 659 522" preserveAspectRatio="none">
 
-            <path id="line-two" class="path hide" width="100%" height="100%" fill="none" stroke="#28AFB0" stroke-width="5" stroke-miterlimit="10" d="M656.5,2.5v517" stroke-dasharray="2042 300" stroke-dashoffset="2342" />
+            <path id="line-two" className="path hide" width="100%" height="100%" fill="none" stroke="#28AFB0" strokeWidth="5" strokeMiterlimit="10" d="M656.5,2.5v517" strokeDasharray="2042 300" strokeDashoffset="2342" />
           </svg>
         </div>
       </div>
