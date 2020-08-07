@@ -195,6 +195,14 @@ class App extends React.Component {
                 const moveLeftIndex = index - 1 === -1 ? colors.length - 1: index - 1;
                 const newColor = colors[moveLeftIndex];
                   projects[project].color = newColor;
+                const parent = document.getElementById(nodeParent);
+                parent.className = newColor;
+              }else if (arrowID === "right-arrow"){
+                const moveRightIndex = index + 1 === 3 ? 0 : index + 1;
+                const newColor = colors[moveRightIndex];
+                  projects[project].color = newColor;
+                const parent = document.getElementById(nodeParent);
+                  parent.className = newColor;
               }
             }
           })

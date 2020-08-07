@@ -333,7 +333,8 @@ form{
 	align-items: center;
 	align-content: center;
 	@include center-element;
-	div  {
+	.img {
+		background-color: #eee;
 		width: 70vw;
 		min-height: 120px;
 		height: 75vw;
@@ -342,9 +343,21 @@ form{
 		margin-bottom: 12px;
 		box-shadow: -4px 4px 0px 0 $orange,
 		 -8px 8px 0px 0 $orangeAccent;
-		
+
 		position: relative;
 		z-index: 900;
+		#left-arrow,
+		#right-arrow {
+			color: $orange;
+			opacity: 0;
+			transition: opacity 1s;
+		}
+		&:hover {
+			#left-arrow,
+			#right-arrow {
+				opacity: 1;
+			}
+		}
 	  	p {
 	  		text-align: center;
 	  		width: 10%;
@@ -352,7 +365,56 @@ form{
 	}
 
 	.orange {
+		width: 70vw;
+		min-height: 120px;
+		height: 75vw;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 12px;
+		box-shadow: -4px 4px 0px 0 $orangeAccent,
+		 -8px 8px 0px 0 #eee;
+
+		position: relative;
+		z-index: 900;
 		background-color: $orange;
+		#left-arrow,
+		#right-arrow {
+			color: $orangeAccent;
+			opacity: 0;
+			transition: opacity 1s;
+		}
+		&:hover {
+			#left-arrow,
+			#right-arrow {
+				opacity: 1;
+			}
+		}
+	}
+	.orangeAccent {
+		width: 70vw;
+		min-height: 120px;
+		height: 75vw;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 12px;
+		box-shadow: -4px 4px 0px 0 #eee,
+		 -8px 8px 0px 0 $orange;
+
+		position: relative;
+		z-index: 900;
+		background-color: $orangeAccent;
+		#left-arrow,
+		#right-arrow {
+			color: #eee;
+			opacity: 0;
+			transition: opacity 1s;
+		}
+		&:hover {
+			#left-arrow,
+			#right-arrow {
+				opacity: 1;
+			}
+		}
 	}
 }
 
@@ -362,9 +424,14 @@ form{
 #right-arrow {
 	width: auto;
 	height: auto;
-	background-color: none;
+	background-color: inherit;
 	border: none;
 	position: absolute;
+	font-size: 34px;
+	transition: text-shadow 1s;
+	&:hover {
+		text-shadow: 4px 4px 4px #000; 
+	}
 }
 
 #left-arrow {
