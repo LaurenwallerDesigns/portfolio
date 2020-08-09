@@ -2,7 +2,6 @@ import React from 'react';
 
 class Header extends React.Component {
 	render () {
-		console.log(this.props.height);
 		return (
 			<header id="header">
 					<div className="headerDesign">

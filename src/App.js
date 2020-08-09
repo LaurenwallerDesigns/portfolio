@@ -1,6 +1,6 @@
 import React from 'react';
-import './App.css';
-import './style.scss';
+import './SCSS/App.css';
+import './SCSS/style.scss';
 import Header from './header.js';
 import Arrows from './arrows.js';
 import Experience from './experience.js';
@@ -18,7 +18,7 @@ const projects = [{id: "prev-one",
                 display: true,
                 color: "img"},
                 {id: "prev-three",
-                classes: ["html", "css", "js"],
+                classes: ["html", "JSON-T", "Less"],
                 display: true,
                 color: "img"},
                 {id: "prev-four",
@@ -65,6 +65,7 @@ class App extends React.Component {
   }
    componentDidMount() {
     this.insertText();
+    this.insertWorkContent(".flex-project .img");
     this.filterProjects();
     document.getElementById('upArrow').classList.add('hide');
     window.addEventListener('scroll', this.scrollTop);
@@ -177,6 +178,44 @@ class App extends React.Component {
     })
   }
 
+  //Insert HTML into blurbs
+  insertWorkContent(v) {
+    const prevproject = document.querySelectorAll(v);
+    prevproject.forEach( p => {
+      if(p.className === "img"){
+        const image = document.createElement("section");
+          image.setAttribute("alt", "screen-image");
+          image.setAttribute("class", "screen-image");
+          p.appendChild(image);
+      }else if(p.className === "orangeAccent") {
+          const div = document.createElement("section");
+            div.setAttribute("class", "about");
+          const title = document.createElement("h3");
+            title.setAttribute("class", "about-title");
+          const paragraph = document.createElement("p");
+            paragraph.setAttribute("class", "about-paragraph");
+          div.appendChild(title);
+          div.appendChild(paragraph);
+          p.appendChild(div);
+      }else {
+          const div = document.createElement("section");
+            div.setAttribute("class", "extra");
+          const title = document.createElement("h3");
+            title.setAttribute("class", "extra-title");
+          const ul = document.createElement("UL");
+          const li = document.createElement("LI");
+          const liTwo = document.createElement("LI");
+          const liThree = document.createElement("LI");
+          ul.appendChild(li);
+          ul.appendChild(liTwo);
+          ul.appendChild(liThree);
+          div.appendChild(title);
+          div.appendChild(ul);
+          p.appendChild(div);
+      }
+    })
+  }
+
 
 //left/right arrows onclick
   projectArrowClick(event) {
@@ -197,23 +236,39 @@ class App extends React.Component {
                   projects[project].color = newColor;
                 const parent = document.getElementById(nodeParent);
                 parent.className = newColor;
+                if(parent.hasChildNodes()) {
+                  let children = parent.childNodes;
+                  children.forEach( c => {
+                    if(c.nodeName !== "BUTTON"){
+                      parent.removeChild(c);
+                    }
+                  })
+                  this.insertWorkContent("#" + nodeParent);
+                }
               }else if (arrowID === "right-arrow"){
                 const moveRightIndex = index + 1 === 3 ? 0 : index + 1;
                 const newColor = colors[moveRightIndex];
                   projects[project].color = newColor;
                 const parent = document.getElementById(nodeParent);
                   parent.className = newColor;
+                if(parent.hasChildNodes()) {
+                  let children = parent.childNodes;
+                  children.forEach( c => {
+                    if(c.nodeName !== "BUTTON"){
+                      parent.removeChild(c);
+                    }
+                  })
+                  this.insertWorkContent("#" + nodeParent);
+                }
               }
             }
           })
-
+        }
       }
+    this.setState({
+      projects: projects
+    });
   }
-
-  this.setState({
-    projects: projects
-  });
-}
 
 //Onclick event for the arrows
   arrowClick(event) {

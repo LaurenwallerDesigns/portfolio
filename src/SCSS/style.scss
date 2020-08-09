@@ -1,4 +1,4 @@
-@import 'colors', 'fonts', 'mixins', 'textBlurbs', 'animate';
+@import 'colors', 'fonts', 'mixins', 'textBlurbs', 'animate', 'urls', 'workContent';
 $breakpoint-tablet-port: 48em;
 $breakpoint-tablet-land: 64em;
 $borderWidth: 80vw;
@@ -345,18 +345,15 @@ form{
 		 -8px 8px 0px 0 $orangeAccent;
 
 		position: relative;
+		overflow: scroll;
 		z-index: 900;
+		.screen-image {
+			width: 70vw;
+			height: auto;
+		}
 		#left-arrow,
 		#right-arrow {
 			color: $orange;
-			opacity: 0;
-			transition: opacity 1s;
-		}
-		&:hover {
-			#left-arrow,
-			#right-arrow {
-				opacity: 1;
-			}
 		}
 	  	p {
 	  		text-align: center;
@@ -380,14 +377,34 @@ form{
 		#left-arrow,
 		#right-arrow {
 			color: $orangeAccent;
-			opacity: 0;
-			transition: opacity 1s;
 		}
-		&:hover {
-			#left-arrow,
-			#right-arrow {
-				opacity: 1;
-			}
+		section{
+			width: auto;
+			height: 75vw;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-content: center;
+		}
+
+		.extra-title {
+			color: #eee;
+			text-align:center;
+			width: auto;
+			text-shadow: 1px 1px 2px #000;
+		}
+		ul{
+			width: 60%;
+			@include center-element;
+			align-self: flex-end;
+		}
+		li{
+			width: auto;
+			color: #eee;
+			list-style: none;
+			max-width: 60vw;
+			padding-left: 4%;
+			padding-right: 4%;
 		}
 	}
 	.orangeAccent {
@@ -403,17 +420,27 @@ form{
 		position: relative;
 		z-index: 900;
 		background-color: $orangeAccent;
+		overflow: scroll;
 		#left-arrow,
 		#right-arrow {
 			color: #eee;
-			opacity: 0;
-			transition: opacity 1s;
 		}
-		&:hover {
-			#left-arrow,
-			#right-arrow {
-				opacity: 1;
-			}
+		section{
+			width: 100% ;
+		}
+
+		.about-title {
+			color: #eee;
+			text-align:center;
+			width: auto;
+			text-shadow: 1px 1px 2px #000;
+		}
+		.about-paragraph {
+			color: #eee;
+			max-width: 80%;
+			@include center-element;
+			padding-left: 4%;
+			padding-right: 4%;
 		}
 	}
 }
@@ -424,11 +451,13 @@ form{
 #right-arrow {
 	width: auto;
 	height: auto;
-	background-color: inherit;
+	background-color: Transparent;
+	outline: none;
 	border: none;
 	position: absolute;
 	font-size: 34px;
-	transition: text-shadow 1s;
+	opacity: 0;
+	transition: opacity 1s, text-shadow 1s;
 	&:hover {
 		text-shadow: 4px 4px 4px #000; 
 	}
@@ -437,10 +466,22 @@ form{
 #left-arrow {
 	left: 0;
 	top: 50%;
+	&:hover {
+		opacity: 1;
+		#right-arrow {
+			opacity: 0;
+		}
+	}
 }
 #right-arrow {
 	right: 0;
 	top: 50%;
+	&:hover {
+		opacity: 1;
+		#left-arrow {
+			opacity: 0;
+		}
+	}
 }
 
 
@@ -454,7 +495,7 @@ form{
 
 #outline{
 	background-color: $blueAccent;
-	mask-image: url(../img/footer-svg.svg);
+	mask-image: $footerSvg;
 	mask-repeat: no-repeat;
 	mask-size: cover;
 	width: 100%;
@@ -466,7 +507,7 @@ form{
 
 #innerline{
 	background-color: $blue;
-	mask-image: url(../img/footer-svg.svg);
+	mask-image: $footerSvg;
 	mask-repeat: no-repeat;
 	mask-size: cover;
 	@include center-element;
@@ -480,7 +521,7 @@ form{
 
 footer{
 	background-color:$blueLight;
-	mask-image: url(../img/footer-svg.svg);
+	mask-image:	$footerSvg;
 	mask-repeat: no-repeat;
 	mask-size: cover;
 	width: 100%;
@@ -572,6 +613,10 @@ footer{
 		.orangeAccent {
 			width: 40%;
 			height: 44vh;
+			.screen-image {
+				width: 100%;
+				height: auto;
+			}
 		}
 	}
 
@@ -619,6 +664,9 @@ footer{
 			width: 30vw;
 			height: 35vw;
 			margin: 15px;
+			.screen-image {
+				width: 30vw;
+			}
 		}
 	}
 }
